@@ -54,7 +54,7 @@ public class AdminController {
 		Map<String,Object> responce = adminService.suspendShopkeeper(shopkeeperId);
 		return ResponseEntity.ok(responce);
 		
-		
+		// Jai Maharashtra
 	}
 	
 
