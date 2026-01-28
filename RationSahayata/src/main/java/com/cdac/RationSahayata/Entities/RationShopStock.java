@@ -33,7 +33,7 @@ public class RationShopStock {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shop_id", nullable = false)
-    private RationShop shopId;
+    private RationShop shop;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

@@ -22,29 +22,25 @@ public class RationCard {
 	private String cardNumber;
 
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "citizenEmail", referencedColumnName = "email", unique = true)
-	private User citizen;
+    @JoinColumn(name = "citizen_email", referencedColumnName = "email", unique = true, nullable = false)
+    private User citizen;  
 
-	@Column(nullable = false, length = 100)
-	private String headOfFamilyName;
+    @Column(nullable = false, length = 100)
+    private String headOfFamilyName;
 
-	@Column(nullable = false)
-	private Integer familyMemberCount;
+    @Column(nullable = false)
+    private Integer familyMemberCount;
 
-	@Column(nullable = false, length = 500)
-	private String address;
+    @Column(nullable = false, length = 500)
+    private String address;
 
-	@NotNull
-	@Column(nullable = false)
-	private Integer shopId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "shop_id", nullable = false)
+    private RationShop shop;  
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "shopId", insertable = false, updatable = false)
-	private RationShop shop;
-
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private RationCardStatus status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RationCardStatus status;
 
 	@Column(nullable = false)
 	private LocalDateTime issueDate = LocalDateTime.now();

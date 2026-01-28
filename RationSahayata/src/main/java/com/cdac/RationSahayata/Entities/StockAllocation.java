@@ -34,13 +34,10 @@ public class StockAllocation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer allocationId;
 
-	@NotNull
-	@Column(nullable = false)
-	private Integer shopId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "shopId", insertable = false, updatable = false)
-	private RationShop shop;
+    @JoinColumn(name = "shop_id", nullable = false)
+    private RationShop shop;   
 
 	@Column(nullable = false)
 	private String monthYear;
@@ -62,4 +59,6 @@ public class StockAllocation {
 
 	@Column(nullable = false)
 	private LocalDateTime allocatedDate = LocalDateTime.now();
+
+	
 }
