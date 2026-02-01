@@ -21,34 +21,37 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RationDistributionLog {
 
-	 @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Integer distributionId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer distributionId;
 
-	    @ManyToOne(fetch = FetchType.LAZY)
-	    @JoinColumn(name = "card_number", nullable = false)
-	    private RationCard rationCard;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "card_number", nullable = false)
+	private RationCard rationCard;
 
-	    @ManyToOne(fetch = FetchType.LAZY)
-	    @JoinColumn(name = "shop_id", nullable = false)
-	    private RationShop shop;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "shop_id", nullable = false)
+	private RationShop shop;
 
-	    @Enumerated(EnumType.STRING)
-	    @Column(nullable = false)
-	    private GrainType grain;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private GrainType grain;
 
-	    @Column(nullable = false)
-	    private Double quantityGiven;
+	@Column(nullable = false)
+	private Double quantityGiven;
 
-	    @Column(nullable = false)
-	    private String distributionMonth;
+	@Column(nullable = false)
+	private String distributionMonth;
 
-	    @CreationTimestamp
-	    private LocalDateTime distributionDate;
+	@CreationTimestamp
+	private LocalDateTime distributionDate;
 
-	    @Enumerated(EnumType.STRING)
-	    @Column(nullable = false)
-	    private DistributionStatus status;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private DistributionStatus status;
+
+	@Column(length = 50)
+	private String transactionId;
 
 	public Integer getDistributionId() {
 		return distributionId;
@@ -112,5 +115,13 @@ public class RationDistributionLog {
 
 	public void setStatus(DistributionStatus status) {
 		this.status = status;
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
 }

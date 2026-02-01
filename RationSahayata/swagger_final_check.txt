@@ -1,0 +1,35 @@
+
+
+StatusCode        : 200
+StatusDescription : 
+Content           : {"openapi":"3.0.1","info":{"titl
+                    e":"Ration Sahayata 
+                    API","description":"Digital 
+                    Ration Management System","versi
+                    on":"1.0"},"servers":[{"url":"ht
+                    tp://localhost:8080","descriptio
+                    n":"Generated server url...
+RawContent        : HTTP/1.1 200 
+                    Vary: Origin,Access-Control-Requ
+                    est-Method,Access-Control-Reques
+                    t-Headers
+                    X-Content-Type-Options: nosniff
+                    X-XSS-Protection: 0
+                    Pragma: no-cache
+                    X-Frame-Options: DENY
+                    Keep-Alive: tim...
+Forms             : 
+Headers           : {[Vary, Origin,Access-Control-Re
+                    quest-Method,Access-Control-Requ
+                    est-Headers], 
+                    [X-Content-Type-Options, 
+                    nosniff], [X-XSS-Protection, 
+                    0], [Pragma, no-cache]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : 
+RawContentLength  : 13173
+
+
+

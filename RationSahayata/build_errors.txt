@@ -1,0 +1,152 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.cdac:RationSahayata >-----------------------
+[INFO] Building RationSahayata 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ RationSahayata ---
+[INFO] Deleting C:\Users\SAURABH WALANJ\Downloads\RationSahayata\RationSahayata\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ RationSahayata ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ RationSahayata ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 61 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/repository/UserRepository.java:[3,25] java.lang.foreign.Linker is a preview API and is disabled by default.
+  (use --enable-preview to enable preview APIs)
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/repository/UserRepository.java:[3,32] java.lang.foreign.Linker.Option is a preview API and is disabled by default.
+  (use --enable-preview to enable preview APIs)
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[16,58] cannot find symbol
+  symbol:   method builder()
+  location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[27,58] cannot find symbol
+  symbol:   method builder()
+  location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[37,58] cannot find symbol
+  symbol:   method builder()
+  location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[47,58] cannot find symbol
+  symbol:   method builder()
+  location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[202,29] cannot find symbol
+  symbol:   method getShopName()
+  location: variable dto of type com.cdac.RationSahayata.dto.ShopApprovalDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[203,29] cannot find symbol
+  symbol:   method getLocation()
+  location: variable dto of type com.cdac.RationSahayata.dto.ShopApprovalDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[328,67] cannot find symbol
+  symbol:   method getGrain()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[329,67] cannot find symbol
+  symbol:   method getGrain()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[333,33] cannot find symbol
+  symbol:   method getGrain()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[334,45] cannot find symbol
+  symbol:   method getQuantityPerPerson()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[358,94] cannot find symbol
+  symbol:   method getGrain()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[359,84] cannot find symbol
+  symbol:   method getGrain()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[361,45] cannot find symbol
+  symbol:   method getQuantityPerPerson()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[368,33] cannot find symbol
+  symbol:   method getGrain()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[369,39] cannot find symbol
+  symbol:   method getQuantityPerPerson()
+  location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/ShopkeeperServiceImpl.java:[425,51] cannot find symbol
+  symbol:   method getHeadOfFamilyName()
+  location: variable dto of type com.cdac.RationSahayata.dto.UpdateCitizenDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/ShopkeeperServiceImpl.java:[426,52] cannot find symbol
+  symbol:   method getFamilyMemberCount()
+  location: variable dto of type com.cdac.RationSahayata.dto.UpdateCitizenDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/ShopkeeperServiceImpl.java:[427,42] cannot find symbol
+  symbol:   method getAddress()
+  location: variable dto of type com.cdac.RationSahayata.dto.UpdateCitizenDto
+[INFO] 20 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.147 s
+[INFO] Finished at: 2026-02-01T13:25:20+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project RationSahayata: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/repository/UserRepository.java:[3,25] java.lang.foreign.Linker is a preview API and is disabled by default.
+[ERROR]   (use --enable-preview to enable preview APIs)
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/repository/UserRepository.java:[3,32] java.lang.foreign.Linker.Option is a preview API and is disabled by default.
+[ERROR]   (use --enable-preview to enable preview APIs)
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[16,58] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[27,58] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[37,58] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/exception/GlobalExceptionHandler.java:[47,58] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.cdac.RationSahayata.dto.ErrorResponseDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[202,29] cannot find symbol
+[ERROR]   symbol:   method getShopName()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.ShopApprovalDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[203,29] cannot find symbol
+[ERROR]   symbol:   method getLocation()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.ShopApprovalDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[328,67] cannot find symbol
+[ERROR]   symbol:   method getGrain()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[329,67] cannot find symbol
+[ERROR]   symbol:   method getGrain()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[333,33] cannot find symbol
+[ERROR]   symbol:   method getGrain()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[334,45] cannot find symbol
+[ERROR]   symbol:   method getQuantityPerPerson()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[358,94] cannot find symbol
+[ERROR]   symbol:   method getGrain()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[359,84] cannot find symbol
+[ERROR]   symbol:   method getGrain()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[361,45] cannot find symbol
+[ERROR]   symbol:   method getQuantityPerPerson()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[368,33] cannot find symbol
+[ERROR]   symbol:   method getGrain()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/AdminServiceImpl.java:[369,39] cannot find symbol
+[ERROR]   symbol:   method getQuantityPerPerson()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.MonthlyEntitlementDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/ShopkeeperServiceImpl.java:[425,51] cannot find symbol
+[ERROR]   symbol:   method getHeadOfFamilyName()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.UpdateCitizenDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/ShopkeeperServiceImpl.java:[426,52] cannot find symbol
+[ERROR]   symbol:   method getFamilyMemberCount()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.UpdateCitizenDto
+[ERROR] /C:/Users/SAURABH WALANJ/Downloads/RationSahayata/RationSahayata/src/main/java/com/cdac/RationSahayata/serviceImpl/ShopkeeperServiceImpl.java:[427,42] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable dto of type com.cdac.RationSahayata.dto.UpdateCitizenDto
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

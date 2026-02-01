@@ -78,7 +78,7 @@ export const adminAPI = {
 
     getPendingShopkeepers: () => api.get('/admin/pending-shopkeeper-list'),
     getAllShopkeepers: () => api.get('/admin/shopkeeper-list'),
-    approveShopkeeper: (shopkeeperId) => api.put(`/admin/approve/${shopkeeperId}`),
+    approveShopkeeper: (shopkeeperId) => api.put(`/admin/approve/${shopkeeperId}`, {}),
     suspendShopkeeper: (shopkeeperId) => api.put(`/admin/suspend/${shopkeeperId}`, {}),
 
 
@@ -107,6 +107,8 @@ export const shopkeeperAPI = {
 
 
     addCitizen: (shopkeeperId, data) => api.post(`/shopkeeper/${shopkeeperId}/add-citizen`, data),
+    updateCitizen: (shopkeeperId, cardNumber, data) => api.put(`/shopkeeper/${shopkeeperId}/update-citizen/${cardNumber}`, data),
+    deleteCitizen: (shopkeeperId, citizenEmail) => api.delete(`/shopkeeper/${shopkeeperId}/delete-citizen/${citizenEmail}`),
     getCitizensUnderShop: (shopkeeperId) => api.get(`/shopkeeper/${shopkeeperId}/citizens`),
 
 

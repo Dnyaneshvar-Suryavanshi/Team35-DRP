@@ -18,8 +18,8 @@ public class DistributeRationDto {
     @Size(min = 12, max = 12)
     private String cardNumber;
 
-    @NotNull(message = "Grain type is required")
-    private GrainType grain;
+    @NotNull(message = "Grain types are required")
+    private java.util.List<GrainType> grains;
 
     private String otp;
 
@@ -31,12 +31,12 @@ public class DistributeRationDto {
         this.cardNumber = cardNumber;
     }
 
-    public GrainType getGrain() {
-        return grain;
+    public java.util.List<GrainType> getGrains() {
+        return grains;
     }
 
-    public void setGrain(GrainType grain) {
-        this.grain = grain;
+    public void setGrains(java.util.List<GrainType> grains) {
+        this.grains = grains;
     }
 
     public String getOtp() {

@@ -1,0 +1,37 @@
+
+
+StatusCode        : 200
+StatusDescription : 
+Content           : <!-- HTML for static 
+                    distribution bundle build -->
+                    <!DOCTYPE html>
+                    <html lang="en">
+                      <head>
+                        <meta charset="UTF-8">
+                        <title>Swagger UI</title>
+                        <link rel="stylesheet" 
+                    type="text/css" href="....
+RawContent        : HTTP/1.1 200 
+                    Vary: Origin,Access-Control-Requ
+                    est-Method,Access-Control-Reques
+                    t-Headers
+                    X-Content-Type-Options: nosniff
+                    X-XSS-Protection: 0
+                    Pragma: no-cache
+                    X-Frame-Options: DENY
+                    Accept-Ranges: ...
+Forms             : 
+Headers           : {[Vary, Origin,Access-Control-Re
+                    quest-Method,Access-Control-Requ
+                    est-Headers], 
+                    [X-Content-Type-Options, 
+                    nosniff], [X-XSS-Protection, 
+                    0], [Pragma, no-cache]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : 
+RawContentLength  : 734
+
+
+

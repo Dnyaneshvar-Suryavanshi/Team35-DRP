@@ -242,113 +242,118 @@ public class ShopkeeperServiceImpl implements ShopkeeperService {
 	}
 
 	@Override
-
+	@Transactional
 	public Map<String, Object> distributeRation(DistributeRationDto dto) {
-		// 1️ Verify OTP
-	    Otp otpEntry = otpRepository
-	            .findTopByCardNumberAndOtpAndIsUsedFalseAndExpiryTimeAfterOrderByCreatedAtDesc(
-	                    dto.getCardNumber(),
-	                    dto.getOtp(),
-	                    LocalDateTime.now())
-	            .orElseThrow(() -> new BadRequestException("Invalid or expired OTP"));
+		// 1. Verify OTP
+		Otp otpEntry = otpRepository
+				.findTopByCardNumberAndOtpAndIsUsedFalseAndExpiryTimeAfterOrderByCreatedAtDesc(
+						dto.getCardNumber(),
+						dto.getOtp(),
+						LocalDateTime.now())
+				.orElseThrow(() -> new BadRequestException("Invalid or expired OTP"));
 
-	    // 2️ Get ration card
-	    RationCard rationCard = rationCardRepository.findById(dto.getCardNumber())
-	            .orElseThrow(() -> new BadRequestException("Ration card not found"));
+		// 2. Get ration card
+		RationCard rationCard = rationCardRepository.findById(dto.getCardNumber())
+				.orElseThrow(() -> new BadRequestException("Ration card not found"));
 
-	    if (rationCard.getStatus() != RationCardStatus.VERIFIED) {
-	        throw new BadRequestException("Ration card not verified");
-	    }
+		if (rationCard.getStatus() != RationCardStatus.VERIFIED) {
+			throw new BadRequestException("Ration card not verified");
+		}
 
-	    // 3️ Citizen
-	    User citizen = rationCard.getCitizen();
+		// 3. Citizen & Shop
+		User citizen = rationCard.getCitizen();
+		RationShop shop = rationCard.getShop();
 
-	    // 4️ Shop (ENTITY, not ID)
-	    RationShop shop = rationCard.getShop(); 
+		// 4. Current month
+		String distributionMonth = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM"));
+		String transactionId = java.util.UUID.randomUUID().toString();
 
-	    // 5️⃣ Monthly entitlement
-	    MonthlyEntitlement entitlement = monthlyEntitlementRepository
-	            .findByGrain(dto.getGrain())
-	            .orElseThrow(() -> new BadRequestException(
-	                    "Monthly entitlement not set for this grain"));
+		StringBuilder grainDetailsBuilder = new StringBuilder();
+		List<Map<String, Object>> distributions = new java.util.ArrayList<>();
 
-	    // 6 Calculate quantity
-	    Double requiredQuantity =
-	            entitlement.getQuantityPerPerson()
-	                    *(rationCard.getFamilyMemberCount());
+		// 5. Process each grain
+		for (com.cdac.RationSahayata.Enums.GrainType grain : dto.getGrains()) {
+			// a. Monthly limit check
+			boolean alreadyTaken = distributionLogRepository.existsByRationCardAndGrainAndDistributionMonthAndStatus(
+					rationCard, grain, distributionMonth, DistributionStatus.SUCCESS);
+			if (alreadyTaken) {
+				throw new BadRequestException(
+						grain + " has already been taken for this month (" + distributionMonth + ")");
+			}
 
-	    // 7 Check stock (ENTITY-BASED)
-	    RationShopStock shopStock = rationShopStockRepository
-	            .findByShopAndGrain(shop, dto.getGrain()) 
-	            .orElseThrow(() -> new BadRequestException("Stock not found for this grain"));
+			// b. Monthly entitlement
+			MonthlyEntitlement entitlement = monthlyEntitlementRepository
+					.findByGrain(grain)
+					.orElseThrow(() -> new BadRequestException(
+							"Monthly entitlement not set for " + grain));
 
-	    if (shopStock.getAvailableStock().compareTo(requiredQuantity) < 0) {
-	        throw new BadRequestException(
-	                "Insufficient stock. Available: " +
-	                        shopStock.getAvailableStock() +
-	                        " kg, Required: " + requiredQuantity + " kg");
-	    }
+			// c. Calculate quantity
+			Double requiredQuantity = entitlement.getQuantityPerPerson() * (rationCard.getFamilyMemberCount());
 
-	    //  Current month
-	    String distributionMonth =
-	            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM"));
+			// d. Check stock
+			RationShopStock shopStock = rationShopStockRepository
+					.findByShopAndGrain(shop, grain)
+					.orElseThrow(() -> new BadRequestException("Stock not found for " + grain));
 
-	    //  Create distribution log (ENTITY mapping)
-	    RationDistributionLog distributionLog = new RationDistributionLog();
-//	    distributionLog.setCardNumber(rationCard.getCardNumber());
-	    distributionLog.setRationCard(rationCard); // optional but good
-	    distributionLog.setShop(shop);             // ✅ FIX
-	    distributionLog.setGrain(dto.getGrain());
-	    distributionLog.setQuantityGiven(requiredQuantity);
-	    distributionLog.setDistributionMonth(distributionMonth);
-	    distributionLog.setStatus(DistributionStatus.SUCCESS);
+			if (shopStock.getAvailableStock().compareTo(requiredQuantity) < 0) {
+				throw new BadRequestException(
+						"Insufficient stock for " + grain + ". Available: " +
+								shopStock.getAvailableStock() +
+								" kg, Required: " + requiredQuantity + " kg");
+			}
 
-	    RationDistributionLog savedLog =
-	            distributionLogRepository.save(distributionLog);
+			// e. Create distribution log
+			RationDistributionLog distributionLog = new RationDistributionLog();
+			distributionLog.setRationCard(rationCard);
+			distributionLog.setShop(shop);
+			distributionLog.setGrain(grain);
+			distributionLog.setQuantityGiven(requiredQuantity);
+			distributionLog.setDistributionMonth(distributionMonth);
+			distributionLog.setStatus(DistributionStatus.SUCCESS);
+			distributionLog.setTransactionId(transactionId);
 
-	    // Update stock
-	    shopStock.setAvailableStock(
-	            shopStock.getAvailableStock()-(requiredQuantity));
-	    rationShopStockRepository.save(shopStock);
+			RationDistributionLog savedLog = distributionLogRepository.save(distributionLog);
 
-	    // 1️1 Mark OTP as used
-	    otpEntry.setIsUsed(true);
-	    otpRepository.save(otpEntry);
+			// f. Update stock
+			shopStock.setAvailableStock(shopStock.getAvailableStock() - (requiredQuantity));
+			rationShopStockRepository.save(shopStock);
 
-	    // 1️2️Send email
-	    emailService.sendDistributionSuccessEmail(
-	            citizen.getEmail(),
-	            citizen.getName(),
-	            rationCard.getHeadOfFamilyName(),
-	            rationCard.getCardNumber(),
-	            dto.getGrain().toString(),
-	            requiredQuantity,
-	            distributionMonth,
-	            shop.getShopName(),
-	            shop.getLocation()
-	    );
+			// g. Collect info for response and email
+			grainDetailsBuilder.append("- ").append(grain).append(": ").append(String.format("%.2f", requiredQuantity))
+					.append(" kg\n");
 
-	    // 1️3️ Response
-	    Map<String, Object> response = new HashMap<>();
-	    response.put("message",
-	            "Ration distributed successfully and confirmation email sent");
+			Map<String, Object> distInfo = new HashMap<>();
+			distInfo.put("grain", grain.toString());
+			distInfo.put("quantityGiven", requiredQuantity);
+			distInfo.put("distributionId", savedLog.getDistributionId());
+			distributions.add(distInfo);
+		}
 
-	    Map<String, Object> distributionData = new HashMap<>();
-	    distributionData.put("distributionId", savedLog.getDistributionId());
-	    distributionData.put("cardNumber", savedLog.getRationCard());
-	    distributionData.put("citizenName", citizen.getName());
-	    distributionData.put("citizenEmail", citizen.getEmail());
-	    distributionData.put("headOfFamily", rationCard.getHeadOfFamilyName());
-	    distributionData.put("shopName", shop.getShopName());
-	    distributionData.put("shopLocation", shop.getLocation());
-	    distributionData.put("grain", savedLog.getGrain().toString());
-	    distributionData.put("quantityGiven", savedLog.getQuantityGiven());
-	    distributionData.put("distributionMonth", savedLog.getDistributionMonth());
-	    distributionData.put("distributionDate", savedLog.getDistributionDate());
-	    distributionData.put("status", savedLog.getStatus().toString());
+		// 6. Mark OTP as used
+		otpEntry.setIsUsed(true);
+		otpRepository.save(otpEntry);
 
-	    response.put("distribution", distributionData);
-	    return response;
+		// 7. Send consolidated email
+		emailService.sendDistributionSuccessEmail(
+				citizen.getEmail(),
+				citizen.getName(),
+				rationCard.getHeadOfFamilyName(),
+				rationCard.getCardNumber(),
+				grainDetailsBuilder.toString(),
+				distributionMonth,
+				shop.getShopName(),
+				shop.getLocation());
+
+		// 8. Response
+		Map<String, Object> response = new HashMap<>();
+		response.put("message", "Ration distributed successfully and confirmation email sent");
+		response.put("citizenName", citizen.getName());
+		response.put("headOfFamily", rationCard.getHeadOfFamilyName());
+		response.put("cardNumber", rationCard.getCardNumber());
+		response.put("distributions", distributions);
+		response.put("distributionMonth", distributionMonth);
+
+		return response;
 	}
 
 	@Override
@@ -376,70 +381,70 @@ public class ShopkeeperServiceImpl implements ShopkeeperService {
 
 	@Override
 	public Map<String, Object> deleteCitizen(Integer shopkeeperId, String citizenEmail) {
-	    // Verify shopkeeper has this shop
-	    RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)
-	            .orElseThrow(() -> new BadRequestException("Shop not found"));
+		// Verify shopkeeper has this shop
+		RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)
+				.orElseThrow(() -> new BadRequestException("Shop not found"));
 
-	    // Get ration card
-	    RationCard rationCard = rationCardRepository.findByCitizenEmail(citizenEmail)
-	            .orElseThrow(() -> new BadRequestException("Ration card not found"));
+		// Get ration card
+		RationCard rationCard = rationCardRepository.findByCitizenEmail(citizenEmail)
+				.orElseThrow(() -> new BadRequestException("Ration card not found"));
 
-	    //  Compare shopId (Integer) with shopId (Integer)
-	    if (!rationCard.getShop().equals(shop.getShopId())) {
-	        throw new BadRequestException("This citizen does not belong to your shop");
-	    }
+		// Compare shopId (Integer) with shopId (Integer)
+		if (!rationCard.getShop().getShopId().equals(shop.getShopId())) {
+			throw new BadRequestException("This citizen does not belong to your shop");
+		}
 
-	    String findCitizenEmail = rationCard.getCitizen().getEmail(); 
-	    String headOfFamily = rationCard.getHeadOfFamilyName();
+		String findCitizenEmail = rationCard.getCitizen().getEmail();
+		String headOfFamily = rationCard.getHeadOfFamilyName();
 
-	    // Delete ration card
-	    rationCardRepository.delete(rationCard);
+		// Delete ration card
+		rationCardRepository.delete(rationCard);
 
-	    Map<String, Object> response = new HashMap<>();
-	    response.put("message", "Citizen deleted successfully");
-	    response.put("citizenEmail", citizenEmail); 
-	    response.put("headOfFamily", headOfFamily);
-	    return response;
+		Map<String, Object> response = new HashMap<>();
+		response.put("message", "Citizen deleted successfully");
+		response.put("citizenEmail", citizenEmail);
+		response.put("headOfFamily", headOfFamily);
+		return response;
 	}
 
 	@Override
 	@Transactional
 	public Map<String, Object> updateCitizen(Integer shopkeeperId, String cardNumber, UpdateCitizenDto dto) {
-	    // Verify shopkeeper has this shop
-	    RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)
-	            .orElseThrow(() -> new BadRequestException("Shop not found"));
+		// Verify shopkeeper has this shop
+		RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)
+				.orElseThrow(() -> new BadRequestException("Shop not found"));
 
-	    // Get ration card
-	    RationCard rationCard = rationCardRepository.findById(cardNumber)
-	            .orElseThrow(() -> new BadRequestException("Ration card not found"));
+		// Get ration card
+		RationCard rationCard = rationCardRepository.findById(cardNumber)
+				.orElseThrow(() -> new BadRequestException("Ration card not found"));
 
-	    // Verify card belongs to this shop
-	    if (!rationCard.getShop().equals(shop.getShopId())) {
-	        throw new BadRequestException("This citizen does not belong to your shop");
-	    }
+		// Verify card belongs to this shop
+		if (!rationCard.getShop().getShopId().equals(shop.getShopId())) {
+			throw new BadRequestException("This citizen does not belong to your shop");
+		}
 
-	    // Update details
-	    rationCard.setHeadOfFamilyName(dto.getHeadOfFamilyName());
-	    rationCard.setFamilyMemberCount(dto.getFamilyMemberCount());
-	    rationCard.setAddress(dto.getAddress());
+		// Update details
+		rationCard.setHeadOfFamilyName(dto.getHeadOfFamilyName());
+		rationCard.setFamilyMemberCount(dto.getFamilyMemberCount());
+		rationCard.setAddress(dto.getAddress());
 
-	    RationCard updatedCard = rationCardRepository.save(rationCard);
+		RationCard updatedCard = rationCardRepository.save(rationCard);
 
-//	    User citizen = userRepository.findByEmail(rationCard.u).orElse(null);
+		// User citizen = userRepository.findByEmail(rationCard.u).orElse(null);
 
-	    Map<String, Object> response = new HashMap<>();
-	    response.put("message", "Citizen details updated successfully");
+		Map<String, Object> response = new HashMap<>();
+		response.put("message", "Citizen details updated successfully");
 
-	    Map<String, Object> cardData = new HashMap<>();
-	    cardData.put("cardNumber", updatedCard.getCardNumber());
-//	    cardData.put("citizenEmail", updatedCard.getCitizenEmail());
-//	    cardData.put("citizenName", citizen);
-	    cardData.put("headOfFamilyName", updatedCard.getHeadOfFamilyName());
-	    cardData.put("familyMemberCount", updatedCard.getFamilyMemberCount());
-	    cardData.put("address", updatedCard.getAddress());
-	    cardData.put("status", updatedCard.getStatus().toString());
+		Map<String, Object> cardData = new HashMap<>();
+		cardData.put("cardNumber", updatedCard.getCardNumber());
+		// cardData.put("citizenEmail", updatedCard.getCitizenEmail());
+		// cardData.put("citizenName", citizen);
+		cardData.put("headOfFamilyName", updatedCard.getHeadOfFamilyName());
+		cardData.put("familyMemberCount", updatedCard.getFamilyMemberCount());
+		cardData.put("address", updatedCard.getAddress());
+		cardData.put("status", updatedCard.getStatus().toString());
 
-	    response.put("updatedCitizen", cardData);
-	    return response;
+		response.put("updatedCitizen", cardData);
+		return response;
 	}
 }

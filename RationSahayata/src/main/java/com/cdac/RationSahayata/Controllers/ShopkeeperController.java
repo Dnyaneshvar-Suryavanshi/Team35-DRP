@@ -46,6 +46,7 @@ public class ShopkeeperController {
 
         return shopkeeperService.addCitizen(shopkeeperId, dto);
     }
+
     @DeleteMapping("/{shopkeeperId}/delete-citizen/{citizenEmail}")
     public ResponseEntity<Map<String, Object>> deleteCitizen(
             @PathVariable Integer shopkeeperId,
@@ -53,6 +54,7 @@ public class ShopkeeperController {
         Map<String, Object> response = shopkeeperService.deleteCitizen(shopkeeperId, citizenEmail);
         return ResponseEntity.ok(response);
     }
+
     @PutMapping("/{shopkeeperId}/update-citizen/{cardNumber}")
     public ResponseEntity<Map<String, Object>> updateCitizen(
             @PathVariable Integer shopkeeperId,
@@ -78,7 +80,7 @@ public class ShopkeeperController {
     }
 
     @PostMapping("/distribute-ration")
-    public Map<String, Object> distributeRation(@RequestBody DistributeRationDto dto) {
+    public Map<String, Object> distributeRation(@Valid @RequestBody DistributeRationDto dto) {
         return shopkeeperService.distributeRation(dto);
     }
 

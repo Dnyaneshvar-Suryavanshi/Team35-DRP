@@ -1,0 +1,30 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.cdac:RationSahayata >-----------------------
+[INFO] Building RationSahayata 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.0/maven-clean-plugin-3.4.0.pom
+Progress (1): 797 B
+Progress (1): 1.8 kB
+Progress (1): 4.4 kB
+Progress (1): 5.5 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.0/maven-clean-plugin-3.4.0.pom (5.5 kB at 5.6 kB/s)
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ RationSahayata ---
+[INFO] Deleting C:\Users\SAURABH WALANJ\Downloads\RationSahayata\RationSahayata\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ RationSahayata ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ RationSahayata ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 61 source files with javac [debug parameters release 21] to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.693 s
+[INFO] Finished at: 2026-02-01T13:27:25+05:30
+[INFO] ------------------------------------------------------------------------

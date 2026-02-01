@@ -14,4 +14,10 @@ public interface RationDistributionLogRepository extends JpaRepository<RationDis
 
 	List<RationDistributionLog> findByShop_ShopIdOrderByDistributionDateDesc(Integer shopId);
 
+	boolean existsByRationCardAndGrainAndDistributionMonthAndStatus(
+			com.cdac.RationSahayata.Entities.RationCard rationCard,
+			com.cdac.RationSahayata.Enums.GrainType grain,
+			String distributionMonth,
+			com.cdac.RationSahayata.Enums.DistributionStatus status);
+
 }

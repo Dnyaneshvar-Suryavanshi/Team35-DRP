@@ -1,0 +1,7538 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.cdac:RationSahayata >-----------------------
+[INFO] Building RationSahayata 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.1:run (default-cli) > test-compile @ RationSahayata >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ RationSahayata ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ RationSahayata ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ RationSahayata ---
+[INFO] skip non existing resourceDirectory C:\Users\SAURABH WALANJ\Downloads\RationSahayata\RationSahayata\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ RationSahayata ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.4.1:run (default-cli) < test-compile @ RationSahayata <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.1:run (default-cli) @ RationSahayata ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-02-01T14:13:17.868+05:30  INFO 38400 --- [RationSahayata] [           main] c.c.R.RationSahayataApplication          : Starting RationSahayataApplication using Java 21.0.5 with PID 38400 (C:\Users\SAURABH WALANJ\Downloads\RationSahayata\RationSahayata\target\classes started by SAURABH WALANJ in C:\Users\SAURABH WALANJ\Downloads\RationSahayata\RationSahayata)
+2026-02-01T14:13:17.872+05:30  INFO 38400 --- [RationSahayata] [           main] c.c.R.RationSahayataApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-02-01T14:13:19.176+05:30  INFO 38400 --- [RationSahayata] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-01T14:13:19.269+05:30  INFO 38400 --- [RationSahayata] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 8 JPA repository interfaces.
+2026-02-01T14:13:19.927+05:30  INFO 38400 --- [RationSahayata] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-01T14:13:19.941+05:30  INFO 38400 --- [RationSahayata] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-01T14:13:19.942+05:30  INFO 38400 --- [RationSahayata] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-02-01T14:13:20.010+05:30  INFO 38400 --- [RationSahayata] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-01T14:13:20.011+05:30  INFO 38400 --- [RationSahayata] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2062 ms
+2026-02-01T14:13:20.212+05:30  INFO 38400 --- [RationSahayata] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-01T14:13:20.274+05:30  INFO 38400 --- [RationSahayata] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-02-01T14:13:20.308+05:30  INFO 38400 --- [RationSahayata] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-01T14:13:20.588+05:30  INFO 38400 --- [RationSahayata] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-01T14:13:20.625+05:30  INFO 38400 --- [RationSahayata] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-01T14:13:20.996+05:30  INFO 38400 --- [RationSahayata] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ceb11f9
+2026-02-01T14:13:21.000+05:30  INFO 38400 --- [RationSahayata] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-01T14:13:21.105+05:30  WARN 38400 --- [RationSahayata] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-01T14:13:21.157+05:30  INFO 38400 --- [RationSahayata] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-01T14:13:22.348+05:30  INFO 38400 --- [RationSahayata] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-01T14:13:22.473+05:30  INFO 38400 --- [RationSahayata] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-01T14:13:23.240+05:30  WARN 38400 --- [RationSahayata] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-01T14:13:23.279+05:30  WARN 38400 --- [RationSahayata] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cff55ff1-febe-498a-b668-31e209d7bff1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-01T14:13:23.288+05:30  INFO 38400 --- [RationSahayata] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-01T14:13:24.067+05:30  INFO 38400 --- [RationSahayata] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-01T14:13:24.077+05:30  INFO 38400 --- [RationSahayata] [           main] c.c.R.RationSahayataApplication          : Started RationSahayataApplication in 6.674 seconds (process running for 7.202)
+Hello User
+2026-02-01T14:13:39.612+05:30  INFO 38400 --- [RationSahayata] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-01T14:13:39.613+05:30  INFO 38400 --- [RationSahayata] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-01T14:13:39.615+05:30  INFO 38400 --- [RationSahayata] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+JWT FILTER HIT ? /v3/api-docs
+2026-02-01T14:13:40.247+05:30  INFO 38400 --- [RationSahayata] [nio-8080-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 536 ms
+JWT FILTER HIT ? /swagger-ui/index.html
+JWT FILTER HIT ? /swagger-ui/swagger-ui.css
+JWT FILTER HIT ? /swagger-ui/index.css
+JWT FILTER HIT ? /swagger-ui/swagger-initializer.js
+JWT FILTER HIT ? /swagger-ui/swagger-ui-standalone-preset.js
+JWT FILTER HIT ? /swagger-ui/swagger-ui-bundle.js
+JWT FILTER HIT ? /v3/api-docs/swagger-config
+JWT FILTER HIT ? /swagger-ui/favicon-32x32.png
+JWT FILTER HIT ? /v3/api-docs
+2026-02-01T14:14:26.082+05:30  INFO 38400 --- [RationSahayata] [io-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 231 ms
+JWT FILTER HIT ? /api/shopkeeper/my-stock/1
+JWT FILTER HIT ? /api/shopkeeper/distribution-history/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rdl1_0.shop_id 
+    where
+        s1_0.shop_id=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/shopkeeper/distribution-history/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rdl1_0.shop_id 
+    where
+        s1_0.shop_id=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/citizen/my-ration-card/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-distributions/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_card rc1_0 
+            on rc1_0.card_number=rdl1_0.card_number 
+    where
+        rc1_0.card_number=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-ration-card/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-distributions/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_card rc1_0 
+            on rc1_0.card_number=rdl1_0.card_number 
+    where
+        rc1_0.card_number=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-ration-card/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-distributions/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_card rc1_0 
+            on rc1_0.card_number=rdl1_0.card_number 
+    where
+        rc1_0.card_number=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-ration-card/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-distributions/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_card rc1_0 
+            on rc1_0.card_number=rdl1_0.card_number 
+    where
+        rc1_0.card_number=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/citizen/my-ration-card/vedantwalanj18@gmail.com
+AUTH USER  : vedantwalanj18@gmail.com
+AUTHORITIES: [ROLE_CITIZEN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    left join
+        users c1_0 
+            on c1_0.email=rc1_0.citizen_email 
+    where
+        c1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/all-families
+JWT FILTER HIT ? /api/admin/allocation-details
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+ADMIN API HIT
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+ADMIN API HIT
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+ADMIN API HIT
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/allocation-details
+JWT FILTER HIT ? /api/admin/all-shops
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/my-stock/1
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rss1_0.stock_id,
+        rss1_0.available_stock,
+        rss1_0.grain,
+        rss1_0.last_updated,
+        rss1_0.shop_id 
+    from
+        ration_shop_stocks rss1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rss1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /
+JWT FILTER HIT ? /HNAP1/
+JWT FILTER HIT ? /loginMsg.js
+JWT FILTER HIT ? /cgi/get.cgi
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/my-stock/1
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rss1_0.stock_id,
+        rss1_0.available_stock,
+        rss1_0.grain,
+        rss1_0.last_updated,
+        rss1_0.shop_id 
+    from
+        ration_shop_stocks rss1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rss1_0.shop_id 
+    where
+        s1_0.shop_id=?
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/my-stock/1
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rss1_0.stock_id,
+        rss1_0.available_stock,
+        rss1_0.grain,
+        rss1_0.last_updated,
+        rss1_0.shop_id 
+    from
+        ration_shop_stocks rss1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rss1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /swagger-ui/index.html
+JWT FILTER HIT ? /swagger-ui/swagger-ui.css
+JWT FILTER HIT ? /swagger-ui/index.css
+JWT FILTER HIT ? /swagger-ui/swagger-ui-bundle.js
+JWT FILTER HIT ? /swagger-ui/swagger-ui-standalone-preset.js
+JWT FILTER HIT ? /swagger-ui/swagger-initializer.js
+JWT FILTER HIT ? /v3/api-docs/swagger-config
+JWT FILTER HIT ? /v3/api-docs
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/undefined
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/undefined
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/my-stock/1
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        rss1_0.stock_id,
+        rss1_0.available_stock,
+        rss1_0.grain,
+        rss1_0.last_updated,
+        rss1_0.shop_id 
+    from
+        ration_shop_stocks rss1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rss1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/allocation-details
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+ADMIN API HIT
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+ADMIN API HIT
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+ADMIN API HIT
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/allocation-details
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/all-families
+JWT FILTER HIT ? /api/admin/allocation-details
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+ADMIN API HIT
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+ADMIN API HIT
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+ADMIN API HIT
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/allocation-details
+JWT FILTER HIT ? /api/admin/all-shops
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/admin/update-entitlement
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0 
+    where
+        me1_0.grain=?
+Hibernate: 
+    update
+        monthly_entitlements 
+    set
+        grain=?,
+        quantity_per_person=? 
+    where
+        entitlement_id=?
+JWT FILTER HIT ? /api/admin/entitlements
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/allocation-details
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/allocation-details
+JWT FILTER HIT ? /api/admin/all-shops
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/shopkeeper-list
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+ADMIN API HIT
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/allocation-details
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/allocation-details
+JWT FILTER HIT ? /api/admin/all-shops
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+JWT FILTER HIT ? /api/admin/distribution-logs
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/pending-shopkeeper-list
+JWT FILTER HIT ? /api/admin/all-shops
+JWT FILTER HIT ? /api/admin/allocation-details
+JWT FILTER HIT ? /api/admin/all-families
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+AUTH USER  : saurabh@example.com
+AUTHORITIES: [ROLE_ADMIN]
+ADMIN API HIT
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shop_id=?
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/auth/login
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/my-stock/1
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rss1_0.stock_id,
+        rss1_0.available_stock,
+        rss1_0.grain,
+        rss1_0.last_updated,
+        rss1_0.shop_id 
+    from
+        ration_shop_stocks rss1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rss1_0.shop_id 
+    where
+        s1_0.shop_id=?
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/2/shop
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+JWT FILTER HIT ? /api/shopkeeper/stock-allocation/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        sa1_0.allocation_id,
+        sa1_0.allocated_by,
+        sa1_0.allocated_date,
+        sa1_0.grain,
+        sa1_0.month_year,
+        sa1_0.quantity_allocated,
+        sa1_0.shop_id,
+        sa1_0.status 
+    from
+        stock_allocations sa1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=sa1_0.shop_id 
+    where
+        s1_0.shop_id=?
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/distribution-history/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rdl1_0.shop_id 
+    where
+        s1_0.shop_id=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/admin/entitlements
+JWT FILTER HIT ? /api/shopkeeper/2/citizens
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        me1_0.entitlement_id,
+        me1_0.grain,
+        me1_0.quantity_per_person 
+    from
+        monthly_entitlements me1_0
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.shop_id=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+JWT FILTER HIT ? /api/shopkeeper/distribution-history/2
+AUTH USER  : ved@example.com
+AUTHORITIES: [ROLE_SHOPKEEPER]
+Hibernate: 
+    select
+        rs1_0.shop_id,
+        rs1_0.created_at,
+        rs1_0.location,
+        rs1_0.shop_name,
+        rs1_0.shopkeeper_id,
+        rs1_0.status 
+    from
+        ration_shops rs1_0 
+    where
+        rs1_0.shopkeeper_id=?
+Hibernate: 
+    select
+        rdl1_0.distribution_id,
+        rdl1_0.distribution_date,
+        rdl1_0.distribution_month,
+        rdl1_0.grain,
+        rdl1_0.quantity_given,
+        rdl1_0.card_number,
+        rdl1_0.shop_id,
+        rdl1_0.status,
+        rdl1_0.transaction_id 
+    from
+        ration_distribution_logs rdl1_0 
+    left join
+        ration_shops s1_0 
+            on s1_0.shop_id=rdl1_0.shop_id 
+    where
+        s1_0.shop_id=? 
+    order by
+        rdl1_0.distribution_date desc
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        rc1_0.card_number,
+        rc1_0.address,
+        rc1_0.citizen_email,
+        rc1_0.family_member_count,
+        rc1_0.head_of_family_name,
+        rc1_0.issue_date,
+        rc1_0.shop_id,
+        rc1_0.status 
+    from
+        ration_card rc1_0 
+    where
+        rc1_0.card_number=?
+Hibernate: 
+    select
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.status 
+    from
+        users u1_0 
+    where
+        u1_0.email=?

@@ -7,7 +7,7 @@ const DistributeRation = () => {
     const [cardNumber, setCardNumber] = useState('');
     const [citizenData, setCitizenData] = useState(null);
     const [entitlements, setEntitlements] = useState([]);
-    const [grainType, setGrainType] = useState('');
+    const [selectedGrains, setSelectedGrains] = useState([]);
     const [loading, setLoading] = useState(false);
     const [citizens, setCitizens] = useState([]);
 
@@ -47,7 +47,7 @@ const DistributeRation = () => {
             const localCitizen = citizens.find(c => c.cardNumber === cardNum);
             if (localCitizen) {
                 setCitizenData(localCitizen);
-                setGrainType('');
+                setSelectedGrains([]);
                 return;
             }
 
@@ -60,7 +60,7 @@ const DistributeRation = () => {
                 setCitizenData(null);
             } else {
                 setCitizenData(citizen);
-                setGrainType('');
+                setSelectedGrains([]);
             }
         } catch {
             toast.error('Search failed');
@@ -82,16 +82,24 @@ const DistributeRation = () => {
         setCardNumber(value);
         if (!value) {
             setCitizenData(null);
-            setGrainType('');
+            setSelectedGrains([]);
             return;
         }
         const citizen = citizens.find(c => c.cardNumber === value);
         citizen ? setCitizenData(citizen) : performSearch(value);
     };
 
+    const toggleGrainSelection = (grain) => {
+        setSelectedGrains(prev =>
+            prev.includes(grain)
+                ? prev.filter(g => g !== grain)
+                : [...prev, grain]
+        );
+    };
+
     const handleDistributeClick = async () => {
-        if (!grainType) {
-            toast.error('Select grain type');
+        if (selectedGrains.length === 0) {
+            toast.error('Select at least one grain type');
             return;
         }
 
@@ -135,7 +143,7 @@ const DistributeRation = () => {
         try {
             const payload = {
                 cardNumber,
-                grain: grainType,
+                grains: selectedGrains,
                 otp
             };
 
@@ -145,24 +153,14 @@ const DistributeRation = () => {
             setShowOtpModal(false);
             setCitizenData(null);
             setCardNumber('');
-            setGrainType('');
+            setSelectedGrains([]);
             setOtp('');
         } catch (err) {
-            setOtpError(err?.response?.data?.message || 'Invalid OTP');
+            console.error('Distribution Error:', err);
+            setOtpError(err?.response?.data?.message || 'Invalid OTP or Distribution failed');
         }
     };
 
-    const selectedEntitlement = grainType
-        ? entitlements.find(e => (e.grain || e.Grain) === grainType)
-        : null;
-
-    const qtyPerPerson = selectedEntitlement
-        ? (selectedEntitlement.quantityPerPerson || selectedEntitlement.QuantityPerPerson)
-        : 0;
-
-    const calculatedQuantity = citizenData
-        ? citizenData.familyMemberCount * qtyPerPerson
-        : 0;
 
     return (
         <div className="animate-in fade-in duration-500">
@@ -248,35 +246,64 @@ const DistributeRation = () => {
 
                             <div className="space-y-6">
                                 <div>
-                                    <label className="block text-[12px] text-gray-400 font-bold mb-2 ml-1">Commodity Selection</label>
-                                    <select
-                                        value={grainType}
-                                        onChange={e => setGrainType(e.target.value)}
-                                        className="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-black focus:outline-none transition-all bg-white font-bold "
-                                    >
-                                        <option value="">-- Choose Grain Item --</option>
-                                        {entitlements.map(e => (
-                                            <option key={e.entitlementId} value={e.grain || e.Grain}>
-                                                {e.grain || e.Grain}
-                                            </option>
-                                        ))}
-                                    </select>
+                                    <label className="block text-[12px] text-gray-400 font-bold mb-3 ml-1">Grain Type </label>
+                                    <div className="grid grid-cols-1 gap-2">
+                                        {entitlements.map(e => {
+                                            const grain = e.grain || e.Grain;
+                                            const isSelected = selectedGrains.includes(grain);
+                                            const qty = (e.quantityPerPerson || e.QuantityPerPerson) * (citizenData.familyMemberCount);
+
+                                            return (
+                                                <div
+                                                    key={e.entitlementId}
+                                                    onClick={() => toggleGrainSelection(grain)}
+                                                    className={`cursor-pointer px-4 py-3 border-2 rounded-xl transition-all flex justify-between items-center ${isSelected
+                                                        ? 'border-green-600 bg-green-50'
+                                                        : 'border-gray-100 hover:border-gray-300'
+                                                        }`}
+                                                >
+                                                    <div className="flex items-center gap-3">
+                                                        <div className={`w-5 h-5 rounded border flex items-center justify-center ${isSelected ? 'bg-green-600 border-green-600' : 'border-gray-300'
+                                                            }`}>
+                                                            {isSelected && <span className="text-white text-xs">✓</span>}
+                                                        </div>
+                                                        <span className={`font-bold ${isSelected ? 'text-green-800' : 'text-gray-700'}`}>
+                                                            {grain}
+                                                        </span>
+                                                    </div>
+                                                    <span className="text-sm font-semibold text-gray-500">
+                                                        {qty.toFixed(2)} KGs
+                                                    </span>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
 
-                                {grainType && (
-                                    <div className="bg-blue-800 text-white rounded-sm px-6 py-2  flex justify-between items-center shadow-lg transform scale-105 transition-transform">
-                                        <div>
-                                            <p className="text-l font-semibold  mb-1">Total Quantity {calculatedQuantity} KGs</p>
+                                {selectedGrains.length > 0 && (
+                                    <div className="bg-blue-800 text-white rounded-lg px-6 py-4 shadow-lg">
+                                        <p className="text-sm font-bold uppercase mb-2 opacity-80">Total Summary</p>
+                                        <div className="space-y-1">
+                                            {selectedGrains.map(g => {
+                                                const ent = entitlements.find(e => (e.grain || e.Grain) === g);
+                                                const qty = (ent.quantityPerPerson || ent.QuantityPerPerson) * (citizenData.familyMemberCount);
+                                                return (
+                                                    <div key={g} className="flex justify-between text-sm">
+                                                        <span>{g}</span>
+                                                        <span className="font-bold">{qty.toFixed(2)} kg</span>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 )}
 
                                 <button
                                     onClick={handleDistributeClick}
-                                    disabled={otpLoading || !grainType}
+                                    disabled={otpLoading || selectedGrains.length === 0}
                                     className="w-full py-4 bg-green-700 text-white rounded-lg font-bold text-sm hover:bg-green-600 transition-all shadow-xl active:scale-95 uppercase tracking-widest disabled:bg-gray-200 disabled:shadow-none"
                                 >
-                                    {otpLoading ? 'Generating OTP...' : 'Generate  OTP'}
+                                    {otpLoading ? 'Generating OTP...' : 'Generate OTP for Selected'}
                                 </button>
                             </div>
                         </div>
