@@ -64,4 +64,28 @@ public class EmailServiceImpl implements EmailService {
 
         }
 
+        @Override
+        public void sendPaymentSuccessMail(String toEmail, String citizenName, Double amount, String transactionId) {
+                SimpleMailMessage message = new SimpleMailMessage();
+                message.setTo(toEmail);
+                message.setSubject("Payment Successful - Ration Sahayata");
+
+                String emailBody = String.format(
+                                "Dear %s,\n\n" +
+                                                "We have received a payment of ₹%.2f for your ration distribution.\n\n"
+                                                +
+                                                "Transaction ID: %s\n\n" +
+                                                "Your OTP will be generated shortly to complete the distribution.\n\n" +
+                                                "Thank you,\n" +
+                                                "Ration Sahayata Team",
+                                citizenName,
+                                amount,
+                                transactionId);
+
+                message.setText(emailBody);
+                message.setFrom("noreply@rationsahayata.com");
+
+                mailSender.send(message);
+        }
+
 }

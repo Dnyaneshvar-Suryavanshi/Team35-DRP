@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cdac.RationSahayata.Entities.RationCard;
-import com.cdac.RationSahayata.Entities.RationDistributionLog;
-import com.cdac.RationSahayata.Entities.RationShopStock;
-import com.cdac.RationSahayata.Entities.StockAllocation;
 import com.cdac.RationSahayata.dto.AddCitizenDto;
 import com.cdac.RationSahayata.dto.DistributeRationDto;
 import com.cdac.RationSahayata.dto.GenerateOtpDto;

@@ -122,6 +122,14 @@ export const shopkeeperAPI = {
 
 
     getEntitlements: () => api.get('/admin/entitlements'),
+
+    sendPaymentSuccessEmail: (data) => api.post('/payment/process', data), // Updated to use PaymentController
+    getPaymentHistory: (shopkeeperId) => api.get(`/payment/history/${shopkeeperId}`), // Added
+    addFeedback: (data) => api.post('/feedback/add', data),
+};
+
+export const paymentAPI = {
+    getAllPayments: () => api.get('/payment/all'),
 };
 
 

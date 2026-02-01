@@ -35,7 +35,7 @@ public class AdminController {
 	private AdminService adminService;
 
 	@GetMapping("/pending-shopkeeper-list")
-//	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<List<Map<String, Object>>> getPendingShopkeepers() {
 		List<Map<String, Object>> pending = adminService.getPendingShopkeepers();
 		System.out.println("ADMIN API HIT");
@@ -115,8 +115,8 @@ public class AdminController {
 	@DeleteMapping("/delete-entitlement/{entitlementId}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<Map<String, Object>> deleteEntitlement(@PathVariable Integer entitlementId) {
-	    Map<String, Object> response = adminService.deleteEntitlement(entitlementId);
-	    return ResponseEntity.ok(response);
+		Map<String, Object> response = adminService.deleteEntitlement(entitlementId);
+		return ResponseEntity.ok(response);
 	}
 
 	@GetMapping("/all-families")
@@ -130,5 +130,4 @@ public class AdminController {
 		List<Map<String, Object>> logs = adminService.getAllDistributionLogs();
 		return ResponseEntity.ok(logs);
 	}
-
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { adminAPI } from '../../api';
 import { toast } from 'react-toastify';
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const DistributionSummary = () => {
     const [logs, setLogs] = useState([]);
@@ -68,8 +69,37 @@ const DistributionSummary = () => {
                 />
             </div>
 
-            <div className="bg-white rounded-2xl border border-gray-100 p-10 shadow-sm relative overflow-hidden">
-
+            <div className="bg-white rounded-2xl border border-gray-100 p-10 shadow-sm relative overflow-hidden flex flex-col md:flex-row gap-8">
+                <div className="flex-1">
+                    <h4 className="text-lg font-bold text-gray-700 mb-6">Grain Distribution Breakdown</h4>
+                    <div className="h-64 w-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <PieChart>
+                                <Pie
+                                    data={Object.entries(logs.reduce((acc, log) => {
+                                        acc[log.grain] = (acc[log.grain] || 0) + log.quantityGiven;
+                                        return acc;
+                                    }, {})).map(([name, value]) => ({ name, value }))}
+                                    cx="50%"
+                                    cy="50%"
+                                    outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                                >
+                                    {Object.entries(logs.reduce((acc, log) => {
+                                        acc[log.grain] = (acc[log.grain] || 0) + log.quantityGiven;
+                                        return acc;
+                                    }, {})).map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={['#0088FE', '#00C49F', '#FFBB28', '#FF8042'][index % 4]} />
+                                    ))}
+                                </Pie>
+                                <Tooltip />
+                                <Legend />
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </div>
+                </div>
             </div>
         </div>
     );

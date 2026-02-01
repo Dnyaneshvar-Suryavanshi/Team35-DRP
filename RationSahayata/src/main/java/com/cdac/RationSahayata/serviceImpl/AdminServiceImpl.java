@@ -122,18 +122,22 @@ public class AdminServiceImpl implements AdminService {
 		shopkeeper.setStatus(UserStatus.Active);
 		shopkeeper = userRepository.save(shopkeeper);
 
-		// Also activate the shop
-		RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)
-				.orElseThrow(() -> new BadRequestException("Shop not found for this shopkeeper"));
+		// Also activate the shop IF it exists
+		Optional<RationShop> shopOpt = rationShopRepository.findByShopkeeperId(shopkeeperId);
 
-		shop.setStatus(ShopStatus.ACTIVE);
-		shop = rationShopRepository.save(shop);
+		String shopStatus = "Not Created";
+		if (shopOpt.isPresent()) {
+			RationShop shop = shopOpt.get();
+			shop.setStatus(ShopStatus.ACTIVE);
+			rationShopRepository.save(shop);
+			shopStatus = shop.getStatus().toString();
+		}
 
 		Map<String, Object> response = new HashMap<>();
 		response.put("message", "Shopkeeper approved successfully");
 		response.put("shopkeeperId", shopkeeperId);
 		response.put("shopkeeperStatus", shopkeeper.getStatus());
-		response.put("shopStatus", shop.getStatus());
+		response.put("shopStatus", shopStatus);
 
 		return response;
 	}
@@ -323,6 +327,7 @@ public class AdminServiceImpl implements AdminService {
 		MonthlyEntitlement entitlement = new MonthlyEntitlement();
 		entitlement.setGrain(dto.getGrain());
 		entitlement.setQuantityPerPerson(dto.getQuantityPerPerson());
+		entitlement.setPricePerKg(dto.getPricePerKg() != null ? dto.getPricePerKg() : 0.0);
 
 		monthlyEntitlementRepository.save(entitlement);
 
@@ -340,6 +345,7 @@ public class AdminServiceImpl implements AdminService {
 			map.put("entitlementId", e.getEntitlementId());
 			map.put("grain", e.getGrain().toString());
 			map.put("quantityPerPerson", e.getQuantityPerPerson());
+			map.put("pricePerKg", e.getPricePerKg());
 			return map;
 		}).collect(Collectors.toList());
 	}
@@ -350,6 +356,7 @@ public class AdminServiceImpl implements AdminService {
 				.orElseThrow(() -> new BadRequestException("Entitlement for " + dto.getGrain() + " not found"));
 
 		entitlement.setQuantityPerPerson(dto.getQuantityPerPerson());
+		entitlement.setPricePerKg(dto.getPricePerKg() != null ? dto.getPricePerKg() : 0.0);
 		monthlyEntitlementRepository.save(entitlement);
 
 		Map<String, Object> response = new HashMap<>();

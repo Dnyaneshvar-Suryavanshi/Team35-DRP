@@ -35,6 +35,9 @@ public class MonthlyEntitlement {
     @Column(nullable = false)
     private Double quantityPerPerson;
 
+    @Column(nullable = false)
+    private Double pricePerKg = 0.0;
+
     public Integer getEntitlementId() {
         return entitlementId;
     }

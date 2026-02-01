@@ -112,17 +112,45 @@ const AllocateStock = () => {
 
     return (
         <div className="animate-in fade-in duration-500">
-            <div className="mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b-2 border-[#FFFBF0] pb-6">
+            <div className="mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b-2 border-[#FFFBF0] pb-6 no-print">
 
-                <button
-                    onClick={() => setShowForm(!showForm)}
-                    className={`px-6 py-2.5 rounded-lg font-bold transition-all duration-300 shadow-lg text-sm uppercase tracking-wider flex items-center gap-2 ${showForm
-                        ? 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        : 'bg-blue-600 text-white hover:bg-blue-800'}`}
-                >
-                    {showForm ? '✕ Cancel Dispatch' : '＋New Allocation'}
-                </button>
+                <div className="flex gap-4">
+                    <button
+                        onClick={() => setShowForm(!showForm)}
+                        className={`px-6 py-2.5 rounded-lg font-bold transition-all duration-300 shadow-lg text-sm uppercase tracking-wider flex items-center gap-2 ${showForm
+                            ? 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            : 'bg-blue-600 text-white hover:bg-blue-800'}`}
+                    >
+                        {showForm ? '✕ Cancel Dispatch' : '＋New Allocation'}
+                    </button>
+                    <button
+                        onClick={() => window.print()}
+                        className="px-6 py-2.5 rounded-lg font-bold transition-all duration-300 shadow-lg text-sm uppercase tracking-wider bg-green-600 text-white hover:bg-green-800 flex items-center gap-2"
+                    >
+                        Print Report
+                    </button>
+                </div>
             </div>
+
+            <style>
+                {`
+                    @media print {
+                        .no-print, header, nav, .sidebar {
+                            display: none !important;
+                        }
+                        .animate-in {
+                            animation: none !important;
+                        }
+                        body {
+                            background-color: white;
+                        }
+                        .bg-white {
+                            box-shadow: none;
+                            border: none;
+                        }
+                    }
+                `}
+            </style>
 
             {showForm && (
                 <div className=" rounded-xl border-2 p-8 mb-8 shadow-sm">

@@ -16,6 +16,7 @@ const AdminLayout = () => {
         { path: '/admin/view-families', label: 'View Families' },
         { path: '/admin/distribution-logs', label: 'Distribution Logs' },
         { path: '/admin/distribution-logs-summary', label: 'Distribution Report' },
+        { path: '/admin/payment-logs', label: 'Payment Logs' },
     ];
 
     return (
@@ -54,7 +55,7 @@ const AdminLayout = () => {
                 </div>
             </div>
 
-            
+
             <div className="flex-1 flex flex-col overflow-hidden bg-white">
                 <header className="bg-white px-8 py-5 shadow-sm">
                     <div className="flex items-center justify-between">

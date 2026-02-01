@@ -2,6 +2,8 @@ import { adminAPI, shopkeeperAPI } from '../../api';
 import { toast } from 'react-toastify';
 import { getUserId } from '../../utils/authUtils';
 import { useEffect, useState } from 'react';
+import PaymentModal from '../../Components/PaymentModal';
+import FeedbackModal from '../../Components/FeedbackModal';
 
 const DistributeRation = () => {
     const [cardNumber, setCardNumber] = useState('');
@@ -15,6 +17,11 @@ const DistributeRation = () => {
     const [otp, setOtp] = useState('');
     const [otpError, setOtpError] = useState('');
     const [otpLoading, setOtpLoading] = useState(false);
+
+    const [showPaymentModal, setShowPaymentModal] = useState(false);
+    const [paymentAmount, setPaymentAmount] = useState(0);
+
+    const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
     useEffect(() => {
         fetchEntitlements();
@@ -97,7 +104,32 @@ const DistributeRation = () => {
         );
     };
 
-    const handleDistributeClick = async () => {
+    const calculateTotalAmount = () => {
+        return selectedGrains.reduce((total, grain) => {
+            const ent = entitlements.find(e => (e.grain || e.Grain) === grain);
+            if (!ent) return total;
+            const qty = (ent.quantityPerPerson || ent.QuantityPerPerson) * (citizenData.familyMemberCount);
+            const price = ent.pricePerKg || 0;
+            return total + (qty * price);
+        }, 0);
+    };
+
+    const handleInitiateDistribution = () => {
+        const total = calculateTotalAmount();
+        setPaymentAmount(total);
+        setShowPaymentModal(true);
+    };
+
+    const handlePaymentSuccess = async (details) => {
+        // Payment successful, now generate OTP
+        // details contains { transactionId, amount, etc. }
+        // You might want to save payment details here or pass transactionId to backend
+
+        setShowPaymentModal(false);
+        await generateOtp(details.transactionId);
+    };
+
+    const generateOtp = async (transactionId) => {
         if (selectedGrains.length === 0) {
             toast.error('Select at least one grain type');
             return;
@@ -117,7 +149,9 @@ const DistributeRation = () => {
             const payload = {
                 shopkeeperId: parseInt(shopkeeperId),
                 citizenEmail: citizenData.citizenEmail,
-                cardNumber: cardNumber
+                cardNumber: cardNumber,
+                transactionId: transactionId, // Pass transaction ID if needed
+                amount: calculateTotalAmount()
             };
 
             await shopkeeperAPI.generateOtp(payload);
@@ -151,14 +185,26 @@ const DistributeRation = () => {
 
             toast.success('Ration distributed successfully');
             setShowOtpModal(false);
-            setCitizenData(null);
-            setCardNumber('');
-            setSelectedGrains([]);
-            setOtp('');
+
+            // Show Feedback Modal instead of clearing immediately
+            setShowFeedbackModal(true);
         } catch (err) {
             console.error('Distribution Error:', err);
             setOtpError(err?.response?.data?.message || 'Invalid OTP or Distribution failed');
         }
+    };
+
+    const handleReset = () => {
+        setCardNumber('');
+        setCitizenData(null);
+        setSelectedGrains([]);
+        setOtp('');
+        setShowOtpModal(false);
+        setShowFeedbackModal(false);
+    };
+
+    const handleFeedbackSubmit = () => {
+        handleReset();
     };
 
 
@@ -252,6 +298,8 @@ const DistributeRation = () => {
                                             const grain = e.grain || e.Grain;
                                             const isSelected = selectedGrains.includes(grain);
                                             const qty = (e.quantityPerPerson || e.QuantityPerPerson) * (citizenData.familyMemberCount);
+                                            const price = e.pricePerKg || 0;
+                                            const cost = qty * price;
 
                                             return (
                                                 <div
@@ -267,13 +315,21 @@ const DistributeRation = () => {
                                                             }`}>
                                                             {isSelected && <span className="text-white text-xs">✓</span>}
                                                         </div>
-                                                        <span className={`font-bold ${isSelected ? 'text-green-800' : 'text-gray-700'}`}>
-                                                            {grain}
+                                                        <div>
+                                                            <span className={`font-bold block ${isSelected ? 'text-green-800' : 'text-gray-700'}`}>
+                                                                {grain}
+                                                            </span>
+                                                            <span className="text-[10px] text-gray-400 font-medium">₹{price}/kg</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="text-right">
+                                                        <span className="block text-sm font-bold text-gray-700">
+                                                            {qty.toFixed(2)} KGs
+                                                        </span>
+                                                        <span className="text-xs font-semibold text-green-600">
+                                                            ₹{cost.toFixed(2)}
                                                         </span>
                                                     </div>
-                                                    <span className="text-sm font-semibold text-gray-500">
-                                                        {qty.toFixed(2)} KGs
-                                                    </span>
                                                 </div>
                                             );
                                         })}
@@ -287,23 +343,29 @@ const DistributeRation = () => {
                                             {selectedGrains.map(g => {
                                                 const ent = entitlements.find(e => (e.grain || e.Grain) === g);
                                                 const qty = (ent.quantityPerPerson || ent.QuantityPerPerson) * (citizenData.familyMemberCount);
+                                                const price = ent.pricePerKg || 0;
+                                                const cost = qty * price;
                                                 return (
                                                     <div key={g} className="flex justify-between text-sm">
-                                                        <span>{g}</span>
-                                                        <span className="font-bold">{qty.toFixed(2)} kg</span>
+                                                        <span>{g}  <span className="opacity-50 text-xs ml-1">({qty.toFixed(2)}kg x ₹{price})</span></span>
+                                                        <span className="font-bold">₹{cost.toFixed(2)}</span>
                                                     </div>
                                                 );
                                             })}
+                                            <div className="border-t border-blue-600/50 mt-2 pt-2 flex justify-between text-base font-extrabold">
+                                                <span>Total Payable</span>
+                                                <span className="text-yellow-400">₹{calculateTotalAmount().toFixed(2)}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 )}
 
                                 <button
-                                    onClick={handleDistributeClick}
+                                    onClick={handleInitiateDistribution}
                                     disabled={otpLoading || selectedGrains.length === 0}
                                     className="w-full py-4 bg-green-700 text-white rounded-lg font-bold text-sm hover:bg-green-600 transition-all shadow-xl active:scale-95 uppercase tracking-widest disabled:bg-gray-200 disabled:shadow-none"
                                 >
-                                    {otpLoading ? 'Generating OTP...' : 'Generate OTP for Selected'}
+                                    {otpLoading ? 'Processing...' : `Proceed to Pay ₹${calculateTotalAmount().toFixed(2)}`}
                                 </button>
                             </div>
                         </div>
@@ -315,6 +377,16 @@ const DistributeRation = () => {
                 </div>
             </div>
 
+            {/* PAYMENT MODAL */}
+            {showPaymentModal && (
+                <PaymentModal
+                    amount={paymentAmount}
+                    citizenName={citizenData.headOfFamilyName}
+                    onClose={() => setShowPaymentModal(false)}
+                    onSuccess={handlePaymentSuccess}
+                />
+            )}
+
             {/* OTP VERIFICATION MODAL */}
             {showOtpModal && (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300">
@@ -322,6 +394,7 @@ const DistributeRation = () => {
                         <div className="text-center mb-8">
                             <h2 className="text-2xl font-bold text-[#003D82] tracking-tight">OTP Verification</h2>
                             <p className="text-sm text-gray-500 mt-2">
+                                Payment Received.<br />
                                 An OTP has been Send to<br />
                                 <strong className="text-gray-800">{citizenData.citizenEmail}</strong>
                             </p>
@@ -347,25 +420,28 @@ const DistributeRation = () => {
                                     onClick={verifyOtpAndDistribute}
                                     className="w-full py-2 bg-[#003D82] text-white rounded-xl font-bold text-base hover:bg-[#002A5C] transition-all shadow-lg active:scale-95"
                                 >
-                                    Verify
+                                    Verify & Distribute
                                 </button>
                                 <button
                                     onClick={() => setShowOtpModal(false)}
                                     className="w-full py-3 text-xs font-bold text-gray-400 uppercase tracking-widest hover:text-red-500 transition-colors"
                                 >
-                                    Cancel Transaction
+                                    Cancel
                                 </button>
                             </div>
                         </div>
-
-                        {/* <div className="mt-8 pt-6 border-t border-gray-100">
-                            <p className="text-[9px] text-gray-400 text-center uppercase font-bold tracking-[0.15em] leading-relaxed">
-                                Security Code expires in 5 minutes.<br />
-                                Do not share this code with anyone.
-                            </p>
-                        </div> */}
                     </div>
                 </div>
+            )}
+
+            {/* FEEDBACK MODAL */}
+            {showFeedbackModal && (
+                <FeedbackModal
+                    shopkeeperId={getUserId()}
+                    citizenEmail={citizenData?.citizenEmail}
+                    onSubmit={handleFeedbackSubmit}
+                    onClose={handleReset}
+                />
             )}
         </div>
     );

@@ -10,7 +10,6 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
-import com.cdac.RationSahayata.Controllers.AdminController;
 import com.cdac.RationSahayata.Entities.MonthlyEntitlement;
 import com.cdac.RationSahayata.Entities.Otp;
 import com.cdac.RationSahayata.Entities.RationCard;
@@ -36,6 +35,8 @@ import com.cdac.RationSahayata.repository.StockAllocationRepository;
 import com.cdac.RationSahayata.repository.UserRepository;
 import com.cdac.RationSahayata.service.EmailService;
 import com.cdac.RationSahayata.service.ShopkeeperService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.transaction.Transactional;
 
@@ -408,7 +409,6 @@ public class ShopkeeperServiceImpl implements ShopkeeperService {
 	}
 
 	@Override
-	@Transactional
 	public Map<String, Object> updateCitizen(Integer shopkeeperId, String cardNumber, UpdateCitizenDto dto) {
 		// Verify shopkeeper has this shop
 		RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)

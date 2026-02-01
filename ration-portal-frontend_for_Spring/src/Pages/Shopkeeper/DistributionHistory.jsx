@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import DataTable from '../../components/DataTable';
 import { getUserId } from '../../utils/authUtils';
 import { useEffect, useState } from 'react';
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const DistributionHistory = () => {
     const [distributions, setDistributions] = useState([]);
@@ -108,6 +109,39 @@ const DistributionHistory = () => {
 
                     color="text-green-700"
                 />
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row gap-8 p-6 mb-8">
+                <div className="flex-1">
+                    <h4 className="text-lg font-bold text-gray-700 mb-6">Commodity Analysis</h4>
+                    <div className="h-64 w-full">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <PieChart>
+                                <Pie
+                                    data={Object.entries(distributions.reduce((acc, log) => {
+                                        acc[log.grain] = (acc[log.grain] || 0) + log.quantityGiven;
+                                        return acc;
+                                    }, {})).map(([name, value]) => ({ name, value }))}
+                                    cx="50%"
+                                    cy="50%"
+                                    outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                                >
+                                    {Object.entries(distributions.reduce((acc, log) => {
+                                        acc[log.grain] = (acc[log.grain] || 0) + log.quantityGiven;
+                                        return acc;
+                                    }, {})).map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={['#0088FE', '#00C49F', '#FFBB28', '#FF8042'][index % 4]} />
+                                    ))}
+                                </Pie>
+                                <Tooltip />
+                                <Legend />
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </div>
+                </div>
             </div>
 
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">

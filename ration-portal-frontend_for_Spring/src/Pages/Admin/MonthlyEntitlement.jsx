@@ -11,6 +11,7 @@ const MonthlyEntitlement = () => {
     const [formData, setFormData] = useState({
         grain: 'RICE',
         quantityPerPerson: '',
+        pricePerKg: '',
     });
 
     const grainTypes = ['RICE', 'WHEAT', 'SUGAR', 'OIL'];
@@ -37,6 +38,7 @@ const MonthlyEntitlement = () => {
             const dto = {
                 grain: formData.grain,
                 quantityPerPerson: parseFloat(formData.quantityPerPerson),
+                pricePerKg: parseFloat(formData.pricePerKg),
             };
             if (editMode) {
                 await adminAPI.updateEntitlement(dto);
@@ -50,6 +52,7 @@ const MonthlyEntitlement = () => {
             setFormData({
                 grain: dto.grain,
                 quantityPerPerson: '',
+                pricePerKg: '',
             });
             fetchEntitlements();
         } catch (error) {
@@ -62,6 +65,7 @@ const MonthlyEntitlement = () => {
         setFormData({
             grain: entitlement.grain,
             quantityPerPerson: entitlement.quantityPerPerson,
+            pricePerKg: entitlement.pricePerKg,
         });
         setEditMode(true);
         setShowForm(true);
@@ -78,6 +82,11 @@ const MonthlyEntitlement = () => {
             key: 'quantityPerPerson',
             label: 'Per Person Allowance',
             render: (row) => <span className="font-semibold text-sm">{row.quantityPerPerson || row.QuantityPerPerson || 0} KG</span>,
+        },
+        {
+            key: 'pricePerKg',
+            label: 'Price per KG',
+            render: (row) => <span className="font-semibold text-sm">₹{row.pricePerKg || 0}</span>,
         },
         {
             key: 'actions',
@@ -115,6 +124,7 @@ const MonthlyEntitlement = () => {
                             setFormData({
                                 grain: 'RICE',
                                 quantityPerPerson: '',
+                                pricePerKg: '',
                             });
                         }}
                         className="bg-blue-700 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition-all shadow-lg text-sm uppercase tracking-wider flex items-center gap-2"
@@ -169,6 +179,22 @@ const MonthlyEntitlement = () => {
                                     placeholder="Enter weight in Kilograms"
                                 />
                                 <p className="text-[10px] text-gray-600 mt-2 ">* This value will be multiplied by family size at point of sale.</p>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-semibold uppercase mb-2 ml-1">
+                                    Price (₹ per KG)
+                                </label>
+                                <input
+                                    type="number"
+                                    required
+                                    min="0"
+                                    step="0.1"
+                                    value={formData.pricePerKg}
+                                    onChange={(e) => setFormData({ ...formData, pricePerKg: e.target.value })}
+                                    className="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-black focus:outline-none transition-all"
+                                    placeholder="Enter Price in Rupees"
+                                />
                             </div>
                         </div>
 

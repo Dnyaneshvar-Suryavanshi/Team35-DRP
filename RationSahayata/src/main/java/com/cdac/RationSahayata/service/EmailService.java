@@ -12,4 +12,6 @@ public interface EmailService {
             String month,
             String shopName,
             String shopLocation);
+
+    void sendPaymentSuccessMail(String toEmail, String citizenName, Double amount, String transactionId);
 }

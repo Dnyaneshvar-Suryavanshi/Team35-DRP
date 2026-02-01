@@ -15,6 +15,7 @@ import AllocateStock from './Pages/Admin/AllocateStock';
 import MonthlyEntitlement from './Pages/Admin/MonthlyEntitlement';
 import ViewFamilies from './Pages/Admin/ViewFamilies';
 import DistributionLogs from './Pages/Admin/DistributionLogs';
+import AdminPaymentLogs from './Pages/Admin/PaymentLogs';
 
 // Shopkeeper Components
 import ShopkeeperLayout from './components/Layout/ShopkeeperLayout';
@@ -23,6 +24,7 @@ import StockManagement from './Pages/Shopkeeper/StockManagement';
 import ManageCitizens from './Pages/Shopkeeper/ManageCitizens';
 import DistributeRation from './Pages/Shopkeeper/DistributeRation';
 import ShopkeeperDistributionHistory from './Pages/Shopkeeper/DistributionHistory';
+import ShopkeeperPaymentHistory from './Pages/Shopkeeper/PaymentHistory';
 
 // Citizen Components
 import CitizenLayout from './components/Layout/CitizenLayout';
@@ -66,6 +68,7 @@ function App() {
           <Route path="distribution-logs" element={<DistributionLogs />} />
           <Route path="distribution-logs/distribution-details/:id" element={<DistributionDeails />} />
           <Route path="distribution-logs-summary" element={<DistributionSummary />} />
+          <Route path="payment-logs" element={<AdminPaymentLogs />} />
 
         </Route>
 
@@ -83,6 +86,7 @@ function App() {
           <Route path="manage-citizens" element={<ManageCitizens />} />
           <Route path="distribute-ration" element={<DistributeRation />} />
           <Route path="distribution-history" element={<ShopkeeperDistributionHistory />} />
+          <Route path="payment-history" element={<ShopkeeperPaymentHistory />} />
         </Route>
 
 

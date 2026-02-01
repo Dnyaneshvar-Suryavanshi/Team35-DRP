@@ -13,6 +13,7 @@ const ShopkeeperLayout = () => {
         { path: '/shopkeeper/manage-citizens', label: 'Citizen List' },
         { path: '/shopkeeper/distribute-ration', label: 'Distribute Ration' },
         { path: '/shopkeeper/distribution-history', label: 'Distribution History' },
+        { path: '/shopkeeper/payment-history', label: 'Payment History' },
     ];
 
     return (
