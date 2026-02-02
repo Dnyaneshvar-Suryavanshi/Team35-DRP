@@ -20,4 +20,6 @@ public interface RationDistributionLogRepository extends JpaRepository<RationDis
 			String distributionMonth,
 			com.cdac.RationSahayata.Enums.DistributionStatus status);
 
+	boolean existsByRationCard_CardNumberAndDistributionMonth(String cardNumber, String distributionMonth);
+
 }

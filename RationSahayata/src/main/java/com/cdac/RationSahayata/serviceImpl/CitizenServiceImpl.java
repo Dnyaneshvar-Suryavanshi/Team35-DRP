@@ -12,7 +12,7 @@ import com.cdac.RationSahayata.Entities.MonthlyEntitlement;
 import com.cdac.RationSahayata.Entities.RationCard;
 import com.cdac.RationSahayata.Entities.RationDistributionLog;
 import com.cdac.RationSahayata.Entities.RationShop;
-import com.cdac.RationSahayata.exception.BadRequestException;
+import com.cdac.RationSahayata.exception.ResourceNotFoundException;
 import com.cdac.RationSahayata.repository.MonthlyEntitlementRepository;
 import com.cdac.RationSahayata.repository.RationCardRepository;
 import com.cdac.RationSahayata.repository.RationDistributionLogRepository;
@@ -39,7 +39,7 @@ public class CitizenServiceImpl implements CitizenService {
 	@Override
 	public Map<String, Object> getMyRationCard(String email) {
 		RationCard rationCard = rationCardRepository.findByCitizenEmail(email)
-				.orElseThrow(() -> new BadRequestException("Ration card not found for this user"));
+				.orElseThrow(() -> new ResourceNotFoundException("Ration card not found for this user"));
 
 		RationShop shop = rationCard.getShop();
 
@@ -75,7 +75,7 @@ public class CitizenServiceImpl implements CitizenService {
 	public List<Map<String, Object>> getMyDistributions(String email) {
 		// Verify card exists
 		RationCard rationCard = rationCardRepository.findByCitizenEmail(email)
-				.orElseThrow(() -> new BadRequestException("Ration card not found for this user"));
+				.orElseThrow(() -> new ResourceNotFoundException("Ration card not found for this user"));
 
 		List<RationDistributionLog> history = rationDistributionLogRepository
 				.findByRationCard_CardNumberOrderByDistributionDateDesc(rationCard.getCardNumber());

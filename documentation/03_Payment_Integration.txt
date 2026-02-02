@@ -1,0 +1,47 @@
+PAYMENT INTEGRATION (SIMULATED)
+===============================
+
+1. OVERVIEW
+-----------
+The application features a simulated payment gateway integration. The User Interface (UI) mimics a real UPI payment flow (Razorpay style), generates a QR code, and "processes" the payment. On specific actions (like "Mark as Received" or waiting), it triggers a success callback.
+
+2. FRONTEND IMPLEMENTATION (`PaymentModal.jsx`)
+-----------------------------------------------
+The `PaymentModal` component handles the simulation.
+
+A. Modes
+- **UPI / QR**: Generates a valid UPI URI (`upi://pay?...`) and renders it as a QR code using `qrcode.react`.
+- **Cash**: displays a simple instruction to collect cash.
+
+B. Simulation Logic
+- Javascript `setTimeout` is used to simulate network delay (3 seconds).
+- `handlePayment()` sets `processing(true)`, waits 3s, then calls `onSuccess` with a mock `transactionId` (`'TXN' + Date.now()`).
+
+C. QR Code Generation
+- Library: `qrcode.react` (`<QRCodeSVG />`)
+- Value: `upi://pay?pa=shopkeeper@ration&pn=RationShop&am=${amount}&cu=INR`
+- This is a standard UPI string that *actual* UPI apps can scan, but money goes to the VPA specified (here `shopkeeper@ration`).
+
+3. BACKEND INTEGRATION (`PaymentServiceImpl.java`)
+--------------------------------------------------
+Once the Frontend "succeeds", it sends a POST request to the Backend with the transaction details.
+
+A. Payment Entity
+- Stores: `TransactionId`, `Amount`, `CitizenEmail`, `ShopkeeperId`, `Timestamp`, `PaymentMethod`.
+
+B. Processing Logic (`processPayment`)
+1. Receives data Map from controller.
+2. Extracts `transactionId`, `amount`, etc.
+3. Saves `Payment` entity to Database (`paymentRepository.save()`).
+4. Triggers `emailService.sendPaymentSuccessMail()` to notify the user.
+
+4. KEY TAKEAWAYS
+----------------
+- **Mock vs Real**: The UI is realistic, but the actual bank transaction is bypassed for the project demo.
+- **Security**: In a real app, payment verification must happen server-side via Razorpay Webhooks or Signature Verification. Here, the client "trusts" the success.
+
+5. DEPENDENCIES USED
+--------------------
+Frontend (package.json):
+"qrcode.react": "^4.2.0",
+"react-toastify": "^11.0.5" (For notifications)

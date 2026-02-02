@@ -1,0 +1,52 @@
+OTP & EMAIL SERVICE
+===================
+
+1. OVERVIEW
+-----------
+The application uses SMTP (Simple Mail Transfer Protocol) to send emails for OTPs (One-Time Passwords) and notifications (Payment Success, Distribution Success).
+- Dependency: `spring-boot-starter-mail`
+- Key Files: `EmailServiceImpl.java`, `PaymentServiceImpl.java` (consumer)
+
+2. CONFIGURATION
+----------------
+In `application.properties` (or yml), the mail server details are configured:
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=your-email@gmail.com
+spring.mail.password=your-app-password
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+3. EMAIL SERVICE IMPLEMENTATION (`EmailServiceImpl.java`)
+---------------------------------------------------------
+This service uses `JavaMailSender` to send `SimpleMailMessage`.
+
+A. Sending OTP (`sendOtpEmail`)
+- Inputs: `toEmail`, `otp`
+- Logic: Constructs a simple text email containing the OTP code and valid duration.
+- Usage: `mailSender.send(message)`
+
+B. Payment Success Notification (`sendPaymentSuccessMail`)
+- Inputs: `toEmail`, `citizenName`, `amount`, `transactionId`
+- Logic: Sends a confirmation email to the citizen after simulated payment.
+
+C. Distribution Success (`sendDistributionSuccessEmail`)
+- Inputs: Distribution details (Grain, Quantity, Shop Name, etc.)
+- Logic: Sends a summary email of the ration received.
+
+4. OTP FLOW (Conceptual)
+------------------------
+1. Frontend requests OTP.
+2. Backend generates random 6-digit code.
+3. Backend stores OTP (in DB/Redis/Cache) linked to User.
+4. `EmailService` sends OTP to User's Email.
+5. User enters OTP in Frontend.
+6. Backend verifies if OTP matches and is not expired.
+
+5. DEPENDENCIES USED
+--------------------
+pom.xml:
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+</dependency>

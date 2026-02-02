@@ -26,4 +26,6 @@ public interface ShopkeeperService {
 	List<Map<String, Object>> distributionHistory(Integer shopkeeperId);
 
 	Map<String, Object> distributeRation(DistributeRationDto dto);
+
+	Map<String, Object> checkRationStatus(String cardNumber);
 }

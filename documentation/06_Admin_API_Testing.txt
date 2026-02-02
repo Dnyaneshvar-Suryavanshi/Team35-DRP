@@ -1,0 +1,115 @@
+ADMIN API TESTING GUIDE
+=======================
+
+BASE URL: http://localhost:8080/api/admin
+AUTH: Login as Admin first to get the Bearer Token.
+
+COMMON HEADERS:
+Content-Type: application/json
+Authorization: Bearer <YOUR_ADMIN_TOKEN>
+
+---------------------------------------------------------------------
+
+1. LOGIN (TO GET TOKEN)
+-----------------------
+URL: http://localhost:8080/api/auth/login
+METHOD: POST
+BODY (JSON):
+{
+  "email": "admin@example.com",
+  "password": "adminpassword"
+}
+RESPONSE: Copy the "token" from the response.
+
+---------------------------------------------------------------------
+
+2. GET PENDING SHOPKEEPERS
+--------------------------
+URL: http://localhost:8080/api/admin/pending-shopkeeper-list
+METHOD: GET
+DESCRIPTION: Returns list of shopkeepers waiting for approval.
+
+---------------------------------------------------------------------
+
+3. APPROVE SHOPKEEPER
+---------------------
+URL: http://localhost:8080/api/admin/approve/{shopkeeperId}
+METHOD: PUT
+EXAMPLE URL: http://localhost:8080/api/admin/approve/5
+DESCRIPTION: Activates a shopkeeper account.
+
+---------------------------------------------------------------------
+
+4. ASSIGN SHOP TO SHOPKEEPER
+----------------------------
+URL: http://localhost:8080/api/admin/create-shop/{shopkeeperId}
+METHOD: POST
+EXAMPLE URL: http://localhost:8080/api/admin/create-shop/5
+BODY (JSON):
+{
+    "shopName": "Pune Central Ration Shop",
+    "shopLocation": "Shivajinagar, Pune"
+}
+DESCRIPTION: Creates a shop entry linked to the shopkeeper.
+
+---------------------------------------------------------------------
+
+5. ALLOCATE STOCK TO SHOP
+-------------------------
+URL: http://localhost:8080/api/admin/allocate
+METHOD: POST
+BODY (JSON):
+{
+    "shopId": 1,
+    "monthYear": "JAN-2026",
+    "grain": "RICE",
+    "quantityAllocated": 500.0,
+    "adminEmail": "admin@example.com",
+    "adminPassword": "adminpassword"
+}
+NOTES: 
+- `grain` values: RICE, WHEAT, OIL, SUGAR
+- `quantityAllocated` must be between 100.0 and 100000.0
+
+---------------------------------------------------------------------
+
+6. VIEW ALLOCATIONS
+-------------------
+URL: http://localhost:8080/api/admin/allocation-details
+METHOD: GET
+
+---------------------------------------------------------------------
+
+7. CREATE MONTHLY ENTITLEMENT
+-----------------------------
+URL: http://localhost:8080/api/admin/create-entitlement
+METHOD: POST
+BODY (JSON):
+{
+    "monthYear": "FEB-2026",
+    "riceAllocation": 5,
+    "wheatAllocation": 5,
+    "oilAllocation": 1,
+    "sugarAllocation": 2,
+    "ricePrice": 3.0,
+    "wheatPrice": 2.0,
+    "oilPrice": 100.0,
+    "sugarPrice": 40.0
+}
+DESCRIPTION: Sets the per-person allocation and prices for a specific month.
+
+---------------------------------------------------------------------
+
+8. GET ALL FAMILIES
+-------------------
+URL: http://localhost:8080/api/admin/all-families
+METHOD: GET
+DESCRIPTION: Returns aggregated family data.
+
+---------------------------------------------------------------------
+
+9. GET DISTRIBUTION LOGS (GLOBAL)
+---------------------------------
+URL: http://localhost:8080/api/admin/distribution-logs
+METHOD: GET
+DESCRIPTION: Returns all distribution records across the system.

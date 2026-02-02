@@ -127,6 +127,7 @@ export const shopkeeperAPI = {
     sendPaymentSuccessEmail: (data) => api.post('/payment/process', data), // Updated to use PaymentController
     getPaymentHistory: (shopkeeperId) => api.get(`/payment/history/${shopkeeperId}`), // Added
     addFeedback: (data) => api.post('/feedback/add', data),
+    checkRationStatus: (cardNumber) => api.get(`/shopkeeper/check-status/${cardNumber}`),
 };
 
 export const paymentAPI = {

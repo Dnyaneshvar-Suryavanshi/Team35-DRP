@@ -1,0 +1,103 @@
+JWT AUTHENTICATION & SECURITY - DEEP DIVE
+===========================================
+
+1. WHAT IS JWT?
+---------------
+JWT (JSON Web Token) is a standard for safely passing claims between two parties. In this project, it is used as a "Pass" or "Badge". When a user logs in, they get this badge. For every future request (like "Add Citizen"), they show this badge to prove who they are.
+
+2. THE AUTHENTICATION FLOW (STEP-BY-STEP)
+-----------------------------------------
+
+STEP A: THE LOGIN REQUEST (Frontend -> Backend)
+- **User Action**: Enters Email & Password on Login Page.
+- **Frontend Code** (`api.js`):
+  `api.post('/auth/login', data)`
+- **Request Payload**:
+  {
+      "email": "shop1@example.com",
+      "password": "password123"
+  }
+
+STEP B: BACKEND VALIDATION (`AuthServiceImpl.java`)
+1. **Find User**: Repository searches for a user with email `shop1@example.com`.
+2. **Verify Password**: `passwordEncoder.matches(rawPassword, encodedPassword)` checks if the password is correct.
+3. **Generate Token**: If valid, it calls `JwtService.generateToken(user)`.
+
+STEP C: TOKEN GENERATION (`JwtServiceImpl.java`)
+The token acts as a sealed envelope containing data.
+- **Claims (Data inside the envelope)**:
+  - `sub` (Subject): User's Email
+  - `userId`: 5 (Database ID)
+  - `role`: "SHOPKEEPER"
+  - `status`: "Active"
+  - `iat`: Issued At (Current Time)
+  - `exp`: Expiration Time (Current Time + 24 Hours)
+- **Signature**: The token is "signed" using a `SECRET_KEY`. This ensures that if anyone tries to change "SHOPKEEPER" to "ADMIN", the signature won't match, and the token is rejected.
+
+STEP D: SENDING RESPONSE
+- The server sends back:
+  {
+      "message": "Login successful",
+      "token": "eyJhbGciOiJIUzI1NiJ9...",
+      "user": { ... }
+  }
+- **Frontend Action**: Sells the token in `localStorage.setItem('token', token)`.
+
+---------------------------------------------------------------------
+
+3. THE AUTHORIZATION FLOW (HOW REQUESTS ARE SECURED)
+----------------------------------------------------
+Scenario: Shopkeeper wants to add a Citizen.
+
+STEP A: FRONTEND INTERCEPTOR (`api.js`)
+Before ANY request leaves the browser, the Axios Interceptor runs:
+```javascript
+api.interceptors.request.use((config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`; // ATTACHES BADGE
+    }
+    return config;
+});
+```
+Request Header sent: `Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...`
+
+STEP B: BACKEND FILTER (`JwtFilter.java`)
+This filter sits in front of all Controllers. It checks every incoming request.
+
+1. **Intercept**: Caught by `doFilterInternal()`.
+2. **Check Header**: Looks for `Authorization` header starting with "Bearer ".
+3. **Extract Token**: Removes "Bearer " prefix to get the raw token string.
+4. **Validation (`jwtService.validateToken`)**:
+   - Decodes the token using the `SECRET_KEY`.
+   - Checks if `exp` (expiration) date has passed.
+   - Extracts the `email` (Subject).
+5. **Authentication Object**:
+   - If valid, it creates a `UsernamePasswordAuthenticationToken`.
+   - It loads the Role (e.g., `ROLE_SHOPKEEPER`) from the token claims.
+   - It places this object into the `SecurityContext`.
+   - **Crucial**: This is how Spring knows "Who is currently logged in".
+
+STEP C: SECURITY CONFIG (`SecurityConfig.java`)
+Spring Security checks if the user has permission for the requested URL.
+- URL: `/api/shopkeeper/add-citizen`
+- Rule: `.hasAnyRole("SHOPKEEPER", "ADMIN")`
+- Current User: Role is `SHOPKEEPER`.
+- **Result**: Access GRANTED.
+
+STEP D: CONTROLLER EXECUTION
+The request finally reaches `ShopkeeperController`.
+
+---------------------------------------------------------------------
+
+4. SECURITY CONFIGURATION EXPLAINED (`SecurityConfig.java`)
+---------------------------------------------------------
+- `.csrf(csrf -> csrf.disable())`: We disable CSRF because we are using stateless JWTs, not browser sessions.
+- `.sessionManagement(...STATELESS)`: Server doesn't remember users in memory. Every request must bring the Token.
+- `.addFilterBefore(jwtFilter, ...)`: Run our custom JWT check *before* the standard Spring Username/Password check.
+
+5. WHY IS THIS SECURE?
+----------------------
+1. **No Password in Request**: After login, password is rarely sent.
+2. **Stateless**: Server reboot doesn't log users out (as long as token is valid).
+3. **Tamper Proof**: If a hacker tries to change their role in the token, the signature check fails.

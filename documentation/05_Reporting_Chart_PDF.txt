@@ -1,0 +1,51 @@
+REPORTING FEATURES (CHARTS & PDF)
+===================================
+
+1. OVERVIEW
+-----------
+The application provides visual analytics and reporting capabilities to help admins and shopkeepers track distribution data.
+- **Visuals**: Pie Charts using `recharts`.
+- **Reports**: Standard Print functionality (Print-to-PDF).
+
+2. PIE CHART IMPLEMENTATION (`DistributionSummary.jsx`)
+------------------------------------------------------
+A. Library
+- `recharts`: A composable charting library built on React components.
+
+B. Implementation Details
+1. `fetchLogs()`: React `useEffect` fetches distribution logs from backend.
+2. Data Transformation:
+   The raw log data is grouped by grain type (Rice, Wheat, etc.) using `reduce()`:
+   ```javascript
+   const data = logs.reduce((acc, log) => {
+       acc[log.grain] = (acc[log.grain] || 0) + log.quantityGiven;
+       return acc;
+   }, {})
+   ```
+3. Rendering:
+   - `<PieChart>`: Canvas container.
+   - `<Pie>`: Draws the slices based on value.
+   - `<Tooltip>`: Shows details on hover.
+   - `<Legend>`: Displays color key.
+
+3. PDF / PRINT FUNCTIONALITY
+----------------------------
+A. Approach
+- The application leverages the browser's native Print API. This is the standard web approach for generating PDFs from web pages.
+
+B. Implementation
+- When a user needs a report (e.g., Ration Card), they use the browser's "Print" function (Ctrl+P).
+- **Styling for Print**:
+  CSS `@media print` query is often used to hide navigation, sidebars, and buttons, ensuring only the content (Card/Report) is printed.
+  Example logic:
+  ```css
+  @media print {
+      .sidebar, .buttons { display: none; }
+      .printable-area { width: 100%; border: none; }
+  }
+  ```
+
+4. DEPENDENCIES
+---------------
+Frontend (package.json):
+"recharts": "^3.7.0"

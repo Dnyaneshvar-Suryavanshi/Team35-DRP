@@ -29,7 +29,7 @@ import com.cdac.RationSahayata.Enums.UserStatus;
 import com.cdac.RationSahayata.dto.MonthlyEntitlementDto;
 import com.cdac.RationSahayata.dto.ShopApprovalDto;
 import com.cdac.RationSahayata.dto.StockAllocationDto;
-import com.cdac.RationSahayata.exception.BadRequestException;
+import com.cdac.RationSahayata.exception.ResourceNotFoundException;
 import com.cdac.RationSahayata.exception.UnauthorizedException;
 import com.cdac.RationSahayata.repository.*;
 import com.cdac.RationSahayata.service.AdminService;
@@ -112,10 +112,10 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Map<String, Object> approveShopkeeper(Integer shopkeeperId) {
 		User shopkeeper = userRepository.findById(shopkeeperId)
-				.orElseThrow(() -> new BadRequestException("Shopkeeper not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Shopkeeper not found"));
 
 		if (shopkeeper.getRole() != UserRole.SHOPKEEPER) {
-			throw new BadRequestException("User is not a shopkeeper");
+			throw new ResourceNotFoundException("User is not a shopkeeper");
 		}
 
 		// Activate the shopkeeper user
@@ -147,14 +147,14 @@ public class AdminServiceImpl implements AdminService {
 	public Map<String, Object> suspendShopkeeper(Integer shopkeeperId) {
 
 		User shopkeeper = userRepository.findById(shopkeeperId)
-				.orElseThrow(() -> new BadRequestException("Shopkeeper not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Shopkeeper not found"));
 
 		if (shopkeeper.getRole() != UserRole.SHOPKEEPER) {
-			throw new BadRequestException("User is not a shopkeeper");
+			throw new ResourceNotFoundException("User is not a shopkeeper");
 		}
 
 		RationShop shop = rationShopRepository.findByShopkeeperId(shopkeeperId)
-				.orElseThrow(() -> new BadRequestException("Shop not found for this shopkeeper"));
+				.orElseThrow(() -> new ResourceNotFoundException("Shop not found for this shopkeeper"));
 
 		String actionMessage;
 
@@ -186,14 +186,14 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Map<String, Object> createShopForShopkeeper(Integer shopkeeperId, ShopApprovalDto dto) {
 		User shopkeeper = userRepository.findById(shopkeeperId)
-				.orElseThrow(() -> new BadRequestException("Shopkeeper not found or not active"));
+				.orElseThrow(() -> new ResourceNotFoundException("Shopkeeper not found or not active"));
 
 		if (shopkeeper.getRole() != UserRole.SHOPKEEPER || shopkeeper.getStatus() != UserStatus.Active) {
-			throw new BadRequestException("Shopkeeper not found or not active");
+			throw new ResourceNotFoundException("Shopkeeper not found or not active");
 		}
 
 		if (rationShopRepository.existsByShopkeeperId(shopkeeperId)) {
-			throw new BadRequestException("Shop already exists for this shopkeeper");
+			throw new ResourceNotFoundException("Shop already exists for this shopkeeper");
 		}
 
 		RationShop shop = new RationShop();
@@ -247,7 +247,7 @@ public class AdminServiceImpl implements AdminService {
 
 		// Verify shop exists
 		RationShop shop = rationShopRepository.findById(dto.getShopId())
-				.orElseThrow(() -> new BadRequestException("Shop not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Shop not found"));
 
 		// Create allocation record
 		StockAllocation allocation = new StockAllocation();
@@ -321,7 +321,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Map<String, Object> createEntitlement(MonthlyEntitlementDto dto) {
 		if (monthlyEntitlementRepository.existsByGrain(dto.getGrain())) {
-			throw new BadRequestException("Entitlement for " + dto.getGrain() + " already exists");
+			throw new ResourceNotFoundException("Entitlement for " + dto.getGrain() + " already exists");
 		}
 
 		MonthlyEntitlement entitlement = new MonthlyEntitlement();
@@ -353,7 +353,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Map<String, Object> updateEntitlement(MonthlyEntitlementDto dto) {
 		MonthlyEntitlement entitlement = monthlyEntitlementRepository.findByGrain(dto.getGrain())
-				.orElseThrow(() -> new BadRequestException("Entitlement for " + dto.getGrain() + " not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Entitlement for " + dto.getGrain() + " not found"));
 
 		entitlement.setQuantityPerPerson(dto.getQuantityPerPerson());
 		entitlement.setPricePerKg(dto.getPricePerKg() != null ? dto.getPricePerKg() : 0.0);
@@ -448,7 +448,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Map<String, Object> deleteEntitlement(Integer entitlementId) {
 		MonthlyEntitlement entitlement = monthlyEntitlementRepository.findById(entitlementId)
-				.orElseThrow(() -> new BadRequestException("Entitlement not found"));
+				.orElseThrow(() -> new ResourceNotFoundException("Entitlement not found"));
 
 		String grainType = entitlement.getGrain().toString();
 

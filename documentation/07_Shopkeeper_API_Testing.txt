@@ -1,0 +1,94 @@
+SHOPKEEPER API TESTING GUIDE
+============================
+
+BASE URL: http://localhost:8080/api/shopkeeper
+AUTH: Login as Shopkeeper first to get the Bearer Token.
+
+COMMON HEADERS:
+Content-Type: application/json
+Authorization: Bearer <YOUR_SHOPKEEPER_TOKEN>
+
+---------------------------------------------------------------------
+
+1. LOGIN (TO GET TOKEN)
+-----------------------
+URL: http://localhost:8080/api/auth/login
+METHOD: POST
+BODY (JSON):
+{
+  "email": "shop1@example.com",
+  "password": "shoppassword"
+}
+RESPONSE: Copy the "token" from the response.
+
+---------------------------------------------------------------------
+
+2. VIEW MY STOCK
+----------------
+URL: http://localhost:8080/api/shopkeeper/my-stock/{shopId}
+METHOD: GET
+EXAMPLE URL: http://localhost:8080/api/shopkeeper/my-stock/1
+DESCRIPTION: Shows current inventory of the shop.
+
+---------------------------------------------------------------------
+
+3. ADD CITIZEN
+--------------
+URL: http://localhost:8080/api/shopkeeper/{shopkeeperId}/add-citizen
+METHOD: POST
+EXAMPLE URL: http://localhost:8080/api/shopkeeper/5/add-citizen
+BODY (JSON):
+{
+    "name": "Ramesh Kumar",
+    "email": "ramesh@example.com",
+    "cardNumber": "123456789012",
+    "mobileNumber": "9876543210",
+    "address": "Flat 101, MG Road",
+    "gender": "MALE",
+    "dob": "1980-05-15",
+    "members": 4,
+    "annualIncome": 50000
+}
+DESCRIPTION: Registers a new ration card holder under this shop.
+
+---------------------------------------------------------------------
+
+4. PROCESS DISTRIBUTION (STEP 1: GENERATE OTP)
+----------------------------------------------
+URL: http://localhost:8080/api/shopkeeper/generate-otp
+METHOD: POST
+BODY (JSON):
+{
+    "cardNumber": "123456789012"
+}
+DESCRIPTION: Sends an OTP to the citizen's registered email.
+
+---------------------------------------------------------------------
+
+5. PROCESS DISTRIBUTION (STEP 2: DISTRIBUTE)
+--------------------------------------------
+URL: http://localhost:8080/api/shopkeeper/distribute-ration
+METHOD: POST
+BODY (JSON):
+{
+    "cardNumber": "123456789012",
+    "otp": "123456", // The OTP received in email
+    "grains": ["RICE", "WHEAT"] 
+}
+DESCRIPTION: Finalizes the distribution, deducts stock, and logs the transaction.
+
+---------------------------------------------------------------------
+
+6. VIEW DISTRIBUTION HISTORY
+----------------------------
+URL: http://localhost:8080/api/shopkeeper/distribution-history/{shopkeeperId}
+METHOD: GET
+EXAMPLE URL: http://localhost:8080/api/shopkeeper/distribution-history/5
+
+---------------------------------------------------------------------
+
+7. VIEW CITIZEN LIST
+--------------------
+URL: http://localhost:8080/api/shopkeeper/{shopkeeperId}/citizens
+METHOD: GET
+EXAMPLE URL: http://localhost:8080/api/shopkeeper/5/citizens

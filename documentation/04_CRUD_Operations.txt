@@ -1,0 +1,67 @@
+CRUD OPERATIONS GUIDE
+=====================
+
+1. OVERVIEW
+-----------
+CRUD stands for Create, Read, Update, Delete. This application performs CRUD operations on various entities like Users, Shopkeepers, Stocks, and Distributions.
+The standard flow is: `Controller` -> `Service` -> `Repository` -> `Database`.
+
+2. ARCHITECTURE LAYERS
+----------------------
+A. Controller (`AdminController.java`)
+- Handles HTTP Requests (GET, POST, PUT, DELETE).
+- Validates Input (e.g., `@Valid`, `@RequestBody`).
+- Calls Service methods.
+- Returns `ResponseEntity`.
+
+B. Service (`AdminServiceImpl.java`)
+- Contains Business Logic.
+- Handles exceptions (e.g., `ResourceNotFoundException`).
+- Calls Repository methods.
+- Maps Entities to DTOs (Data Transfer Objects).
+
+C. Repository (`AdminRepository.java`)
+- Extends `JpaRepository<Entity, ID>`.
+- Provides built-in methods: `save()`, `findById()`, `findAll()`, `deleteById()`.
+- Custom queries using `@Query` or method naming conventions.
+
+3. EXAMPLE: SHOPKEEPER CRUD
+---------------------------
+
+A. Create (Add Shopkeeper)
+- Endpoint: `POST /admin/register/shopkeeper`
+- Logic:
+  1. `AdminController` accepts `RegistrationDto`.
+  2. `AdminService` creates a `User` entity with role `SHOPKEEPER`.
+  3. `userRepository.save(user)` persists it.
+
+B. Read (Get All Shopkeepers)
+- Endpoint: `GET /admin/verify/shopkeeper` (or similar)
+- Logic:
+  1. `shopkeeperRepository.findAll()`.
+  2. Filters or maps list to DTO list.
+  3. Returns JSON array.
+
+C. Update (Approve Shopkeeper)
+- Endpoint: `PUT /admin/approve/shopkeeper/{id}`
+- Logic:
+  1. `repo.findById(id)`.
+  2. `shopkeeper.setStatus(UserStatus.Active)`.
+  3. `repo.save(shopkeeper)`.
+
+D. Delete
+- Endpoint: `DELETE /admin/delete/{id}`
+- Logic:
+  1. Check existence.
+  2. `repo.deleteById(id)`.
+
+4. DTO PATTERN
+--------------
+To avoid exposing internal Database Entities directly to the API, DTOs are used.
+- `RegistrationDto`: For input data.
+- `UserResponseDto`: For output data (hides password, adds extra info).
+
+DEPENDENCIES:
+- `spring-boot-starter-data-jpa`
+- `lombok` (Reduces boilerplate code like Getters/Setters)
+- `mysql-connector-j`

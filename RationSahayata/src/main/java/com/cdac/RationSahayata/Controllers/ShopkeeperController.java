@@ -91,4 +91,9 @@ public class ShopkeeperController {
     public List<Map<String, Object>> getDistributionHistory(@PathVariable Integer shopkeeperId) {
         return shopkeeperService.distributionHistory(shopkeeperId);
     }
+
+    @GetMapping("/check-status/{cardNumber}")
+    public ResponseEntity<Map<String, Object>> checkRationStatus(@PathVariable String cardNumber) {
+        return ResponseEntity.ok(shopkeeperService.checkRationStatus(cardNumber));
+    }
 }

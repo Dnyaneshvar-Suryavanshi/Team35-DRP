@@ -42,14 +42,14 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-	@ExceptionHandler(BadRequestException.class)
-	public ResponseEntity<ErrorResponseDto> handleBadRequest(BadRequestException ex) {
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ErrorResponseDto> handleResourceNotFound(ResourceNotFoundException ex) {
 		ErrorResponseDto error = ErrorResponseDto.builder()
 				.message(ex.getMessage())
-				.status(HttpStatus.BAD_REQUEST.value())
+				.status(HttpStatus.NOT_FOUND.value())
 				.timestamp(LocalDateTime.now())
 				.build();
-		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
 
 }

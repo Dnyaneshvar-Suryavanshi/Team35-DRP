@@ -1,0 +1,55 @@
+CITIZEN API TESTING GUIDE
+=========================
+
+BASE URL: http://localhost:8080/api/citizen
+AUTH: Login as Citizen (Optional for some endpoints if public, but usually required).
+
+COMMON HEADERS:
+Content-Type: application/json
+Authorization: Bearer <YOUR_CITIZEN_TOKEN>
+
+---------------------------------------------------------------------
+
+1. LOGIN (TO GET TOKEN)
+-----------------------
+URL: http://localhost:8080/api/auth/login
+METHOD: POST
+BODY (JSON):
+{
+  "email": "ramesh@example.com",
+  "password": "password"
+}
+RESPONSE: Copy the "token".
+
+---------------------------------------------------------------------
+
+2. GET MY RATION CARD
+---------------------
+URL: http://localhost:8080/api/citizen/my-ration-card/{email}
+METHOD: GET
+EXAMPLE URL: http://localhost:8080/api/citizen/my-ration-card/ramesh@example.com
+DESCRIPTION: Returns details of the citizen's ration card including family members.
+
+---------------------------------------------------------------------
+
+3. GET MY DISTRIBUTION HISTORY
+------------------------------
+URL: http://localhost:8080/api/citizen/my-distributions/{email}
+METHOD: GET
+EXAMPLE URL: http://localhost:8080/api/citizen/my-distributions/ramesh@example.com
+DESCRIPTION: Returns history of all rations collected by this citizen.
+
+---------------------------------------------------------------------
+
+4. SUBMIT FEEDBACK (OPTIONAL)
+-----------------------------
+URL: http://localhost:8080/api/feedback/add
+METHOD: POST
+BODY (JSON):
+{
+    "shopkeeperId": 5,
+    "citizenEmail": "ramesh@example.com",
+    "rating": 5,
+    "comments": "Excellent service and clean shop."
+}
+DESCRIPTION: Allows citizen to rate their shop.

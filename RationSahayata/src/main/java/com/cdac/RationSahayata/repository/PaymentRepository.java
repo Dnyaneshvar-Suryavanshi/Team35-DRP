@@ -10,4 +10,9 @@ public interface PaymentRepository extends JpaRepository<Payment, Integer> {
     List<Payment> findByShopkeeperIdOrderByTimestampDesc(Integer shopkeeperId);
 
     List<Payment> findAllByOrderByTimestampDesc();
+
+    boolean existsByTransactionId(String transactionId);
+
+    long countByCitizenEmailAndTimestampBetween(String citizenEmail, java.time.LocalDateTime start,
+            java.time.LocalDateTime end);
 }

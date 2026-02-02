@@ -1,0 +1,56 @@
+PROJECT OVERVIEW & TECH STACK
+=============================
+
+1. INTRODUCTION
+---------------
+The Ration Sahayata project is a full-stack web application designed to manage and digitalize the Public Distribution System (PDS). It facilitates the distribution of ration to citizens, management of stock by shopkeepers, and oversight by administrators.
+
+2. TECHNOLOGY STACK
+-------------------
+
+BACKEND:
+- Language: Java 21
+- Framework: Spring Boot 3.4.1
+- Build Tool: Maven
+- Database: MySQL
+- Security: Spring Security + JWT (JSON Web Tokens)
+- Documentation: Swagger / OpenAPI
+- Email: Spring Boot Starter Mail
+
+FRONTEND:
+- Framework: React (Vite)
+- Language: JavaScript (ES6+)
+- Styling: Tailwind CSS
+- Routing: React Router Dom
+- HTTP Client: Axios
+- Charts: Recharts
+- Notifications: React Toastify
+- QR Code: qrcode.react
+
+3. ARCHITECTURE
+---------------
+The application follows a standard Client-Server architecture.
+- Client (Frontend): React SPA (Single Page Application) that consumes REST APIs.
+- Server (Backend): Spring Boot Application exposing RESTful endpoints.
+- Database: Relational MySQL database storing Users, Stocks, Payments, etc.
+
+4. FOLDER STRUCTURE
+-------------------
+Root/
+├── RationSahayata/            (Backend Code)
+│   ├── src/main/java/com/cdac/RationSahayata/
+│   │   ├── config/            (Security & App Config)
+│   │   ├── Controllers/       (API Endpoints)
+│   │   ├── Entities/          (Database Models)
+│   │   ├── repository/        (Data Access Layer)
+│   │   ├── serviceImpl/       (Business Logic)
+│   │   └── ...
+│   └── pom.xml                (Dependencies)
+│
+└── ration-portal-frontend/    (Frontend Code)
+    ├── src/
+    │   ├── components/        (Reusable UI)
+    │   ├── Pages/             (Views for Admin, Shopkeeper, Citizen)
+    │   ├── api.js             (API Config)
+    │   └── ...
+    └── package.json           (Dependencies)

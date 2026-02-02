@@ -35,6 +35,31 @@ public class PaymentServiceImpl implements PaymentService {
 
         String transactionId = (String) data.get("transactionId");
 
+        // Prevent duplicate payment entry by Transaction ID
+        if (paymentRepository.existsByTransactionId(transactionId)) {
+            System.out.println("Duplicate Payment Transaction Ignored: " + transactionId);
+            return;
+        }
+
+        // Check if ANY payment exists for this citizen this month
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime startOfMonth = now.withDayOfMonth(1).withHour(0).withMinute(0).withSecond(0);
+        LocalDateTime endOfMonth = now.withDayOfMonth(now.getMonth().length(now.toLocalDate().isLeapYear()))
+                .withHour(23).withMinute(59).withSecond(59);
+
+        long paymentsThisMonth = paymentRepository.countByCitizenEmailAndTimestampBetween(toEmail, startOfMonth,
+                endOfMonth);
+
+        System.out.println("DEBUG: Checking payments for " + toEmail);
+        System.out.println("DEBUG: From " + startOfMonth + " to " + endOfMonth);
+        System.out.println("DEBUG: Found " + paymentsThisMonth + " payments");
+
+        if (paymentsThisMonth > 0) {
+            System.out.println("Payment already exists for citizen " + toEmail + " in month " + now.getMonth());
+            throw new com.cdac.RationSahayata.exception.ResourceNotFoundException(
+                    "Payment already done for this month (" + now.getMonth() + ")");
+        }
+
         // Save Payment Logic
         try {
             // Get shopkeeperId if provided
@@ -68,7 +93,13 @@ public class PaymentServiceImpl implements PaymentService {
             System.err.println("Error saving payment record: " + e.getMessage());
         }
 
-        emailService.sendPaymentSuccessMail(toEmail, citizenName, amount, transactionId);
+        try {
+            emailService.sendPaymentSuccessMail(toEmail, citizenName, amount, transactionId);
+        } catch (Exception e) {
+            System.err.println("Failed to send payment success email: " + e.getMessage());
+            // Consume error so it doesn't fail the request.
+            // The payment is already recorded.
+        }
     }
 
     @Override

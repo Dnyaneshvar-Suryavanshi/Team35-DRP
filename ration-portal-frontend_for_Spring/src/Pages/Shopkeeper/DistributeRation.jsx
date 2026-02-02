@@ -20,6 +20,7 @@ const DistributeRation = () => {
 
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [paymentAmount, setPaymentAmount] = useState(0);
+    const [isPaymentCompleted, setIsPaymentCompleted] = useState(false);
 
 
 
@@ -53,8 +54,7 @@ const DistributeRation = () => {
         try {
             const localCitizen = citizens.find(c => c.cardNumber === cardNum);
             if (localCitizen) {
-                setCitizenData(localCitizen);
-                setSelectedGrains([]);
+                await verifyCitizenStatus(localCitizen);
                 return;
             }
 
@@ -66,8 +66,7 @@ const DistributeRation = () => {
                 toast.error('Citizen not found under your shop');
                 setCitizenData(null);
             } else {
-                setCitizenData(citizen);
-                setSelectedGrains([]);
+                await verifyCitizenStatus(citizen);
             }
         } catch {
             toast.error('Search failed');
@@ -84,16 +83,46 @@ const DistributeRation = () => {
         performSearch(cardNumber);
     };
 
-    const handleCitizenSelect = (e) => {
+    const handleCitizenSelect = async (e) => {
         const value = e.target.value;
         setCardNumber(value);
         if (!value) {
             setCitizenData(null);
             setSelectedGrains([]);
+            setOtp('');
+            setIsPaymentCompleted(false);
             return;
         }
         const citizen = citizens.find(c => c.cardNumber === value);
-        citizen ? setCitizenData(citizen) : performSearch(value);
+        if (citizen) {
+            await verifyCitizenStatus(citizen);
+        } else {
+            performSearch(value);
+        }
+    };
+
+    const verifyCitizenStatus = async (citizen) => {
+        setLoading(true);
+        try {
+            const data = await shopkeeperAPI.checkRationStatus(citizen.cardNumber);
+            if (data.isDistributed) {
+                toast.error(data.message, { autoClose: 5000 });
+                // We still show data but maybe disable actions?
+                // Or clear it? User asked "should not be allowed... it should display user already paid"
+                setCitizenData(citizen);
+                setIsPaymentCompleted(true); // Disable payment button as if paid/done
+                // Add a visual indicator
+            } else {
+                setCitizenData(citizen);
+                setIsPaymentCompleted(false);
+                setSelectedGrains([]);
+            }
+        } catch (error) {
+            console.error(error);
+            setCitizenData(citizen); // Fallback
+        } finally {
+            setLoading(false);
+        }
     };
 
     const toggleGrainSelection = (grain) => {
@@ -139,11 +168,13 @@ const DistributeRation = () => {
             toast.success('Payment recorded successfully');
         } catch (error) {
             console.error('Failed to save payment record:', error);
-            // We continue flow even if saving payment log fails, or you can block.
-            // For now, we log and continue to OTP.
+            // If payment fails (e.g., duplicate), we MUST STOP here.
+            toast.error(error.response?.data?.message || 'Payment check failed. Possible duplicate.');
+            return; // STOP FLOW
         }
 
         setShowPaymentModal(false);
+        setIsPaymentCompleted(true);
         await generateOtp(details.transactionId);
     };
 
@@ -204,6 +235,11 @@ const DistributeRation = () => {
             toast.success('Ration distributed successfully');
             setShowOtpModal(false);
 
+            // Remove the processed citizen from the list locally to prevent re-selection
+            setCitizens(prev => prev.filter(c => c.cardNumber !== cardNumber));
+            // Reset form
+            handleReset();
+
         } catch (err) {
             console.error('Distribution Error:', err);
             setOtpError(err?.response?.data?.message || 'Invalid OTP or Distribution failed');
@@ -215,7 +251,9 @@ const DistributeRation = () => {
         setCitizenData(null);
         setSelectedGrains([]);
         setOtp('');
+        setOtp('');
         setShowOtpModal(false);
+        setIsPaymentCompleted(false);
     };
 
     return (
@@ -372,10 +410,10 @@ const DistributeRation = () => {
 
                                 <button
                                     onClick={handleInitiateDistribution}
-                                    disabled={otpLoading || selectedGrains.length === 0}
+                                    disabled={otpLoading || selectedGrains.length === 0 || isPaymentCompleted}
                                     className="w-full py-4 bg-green-700 text-white rounded-lg font-bold text-sm hover:bg-green-600 transition-all shadow-xl active:scale-95 uppercase tracking-widest disabled:bg-gray-200 disabled:shadow-none"
                                 >
-                                    {otpLoading ? 'Processing...' : `Proceed to Pay ₹${calculateTotalAmount().toFixed(2)}`}
+                                    {isPaymentCompleted ? 'Payment Completed - Verify OTP' : (otpLoading ? 'Processing...' : `Proceed to Pay ₹${calculateTotalAmount().toFixed(2)}`)}
                                 </button>
                             </div>
                         </div>
